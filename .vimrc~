@@ -1,0 +1,6 @@
+
+# This turns on syntax highlighting.
+syntax on
+
+# This turns on line numbering.
+set number 

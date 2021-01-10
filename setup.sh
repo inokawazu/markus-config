@@ -7,8 +7,8 @@ echo "This is my setup script, it is designed to install all of my, Markus Amano
 # Makes the vim plug dir if it does not exist.
 PLUGGED_DIR=~/.vim/plugged
 
-if [-f $PLUGGED_DIR]; then
-	mkdir $PLUGGED_DIR
+if [ -d "$PLUGGED_DIR" ]; then
+	mkdir "$PLUGGED_DIR"
 fi
 
 #Downloads the .vimrc file

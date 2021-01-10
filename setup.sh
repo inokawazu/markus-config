@@ -8,4 +8,5 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 mkdir ~/.vim/plugged
 
 #Downloads the .vimrc file
+rm ~/.vimrc
 curl -fLo ~/.vimrc https://raw.githubusercontent.com/mgarbiso/markus-config/main/.vimrc

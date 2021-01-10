@@ -12,6 +12,6 @@ set wildmenu
 call plug#begin('~/.vim/plugged')
 
 " Julia support for vim.
-Plug 'JuliaEditorSupport/julia-vim
+Plug 'JuliaEditorSupport/julia-vim'
 
 call plug#end()

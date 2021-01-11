@@ -6,6 +6,7 @@ This repo contains all my favorite configurations of various programs I personal
 - [ ] OhMyZsh
 - [x] VIM - julia
 - [ ] VIM - python
+- [ ] some aliases
 
 To run the setup from the terminal (with bash), you can run the following script.
 `curl https://raw.githubusercontent.com/mgarbiso/markus-config/main/setup.sh | bash`

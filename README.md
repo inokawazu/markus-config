@@ -5,7 +5,7 @@ This repo contains all my favorite configurations of various programs I personal
 - [ ] julia **startup.jl**
 - [ ] OhMyZsh
 - [x] VIM - julia
-- [ ] VIM - python
+- [x] VIM - python
 - [ ] some aliases
 
 To run the setup from the terminal (with bash), you can run the following script.

@@ -25,6 +25,15 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin('~/.vim/plugged')
 
 " Julia support for vim.
-Plug 'JuliaEditorSupport/julia-vim'
+" Plug 'JuliaEditorSupport/julia-vim'
+
+" Multi Language support
+Plug 'sheerun/vim-polyglot'
+
+" Support for directory navigation from vim.
+Plug 'preservim/nerdtree'
+
+" Linting support for various languages
+Plug 'dense-analysis/ale'
 
 call plug#end()

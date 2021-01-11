@@ -8,6 +8,8 @@ set number
 " This turns on auto suggestions of commands.
 set wildmenu
 
+" This sets the color scheme.
+colorscheme jellybeans
 
 " Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))

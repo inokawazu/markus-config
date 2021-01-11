@@ -8,6 +8,10 @@ set number
 " This turns on auto suggestions of commands.
 set wildmenu
 
+" Disables the autoback up feature of files of vim
+set nobackup
+set nowritebackup
+
 " This sets the color scheme.
 colorscheme jellybeans
 

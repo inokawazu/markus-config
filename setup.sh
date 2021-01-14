@@ -2,11 +2,7 @@
 echo "This is my setup script, it is designed to install all of my, Markus Amano's, presets."
 
 # Makes the vim plug dir if it does not exist.
-PLUGGED_DIR=~/.vim/plugged
-
-if [ ! -d "$PLUGGED_DIR" ]; then
-	mkdir "$PLUGGED_DIR"
-fi
+mkdir -p ~/.vim/plugged
 
 # Makes the colors folder.
 mkdir -p ~/.vim/colors

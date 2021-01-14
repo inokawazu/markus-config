@@ -9,7 +9,7 @@ set number
 set wildmenu
 
 " Spellcheck
-set spelling=en_us
+set spelllang=en_us
 set spell
 
 " Disables the autoback up feature of files of vim

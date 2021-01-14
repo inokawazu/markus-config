@@ -8,6 +8,10 @@ set number
 " This turns on auto suggestions of commands.
 set wildmenu
 
+" Spellcheck
+set spelling=en_us
+set spell
+
 " Disables the autoback up feature of files of vim
 set nobackup
 set nowritebackup

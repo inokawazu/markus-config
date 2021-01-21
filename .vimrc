@@ -10,7 +10,8 @@ set wildmenu
 
 " Spellcheck
 set spelllang=en_us
-set spell
+":set spell to start the spellcheck
+" set spell
 
 " Disables the autoback up feature of files of vim
 set nobackup

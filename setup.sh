@@ -12,5 +12,5 @@ curl -sfLo ~/.vim/colors/jellybeans.vim https://raw.githubusercontent.com/nanote
 
 
 #Downloads the .vimrc file
-rm ~/.vimrc
+rm -f ~/.vimrc
 curl -sfLo ~/.vimrc https://raw.githubusercontent.com/mgarbiso/markus-config/main/.vimrc

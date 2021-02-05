@@ -51,3 +51,5 @@ Plug 'preservim/nerdtree'
 Plug 'dense-analysis/ale'
 
 call plug#end()
+
+set laststatus=2

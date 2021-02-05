@@ -10,7 +10,8 @@ mkdir -p ~/.vim/colors
 # Downloads the themes for vim.
 curl -sfLo ~/.vim/colors/jellybeans.vim https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
 
-
 #Downloads the .vimrc file
-rm -f ~/.vimrc
+if [ -f "~/.vimrc" ]; then
+    rm "~/.vimrc"
+fi
 curl -sfLo ~/.vimrc https://raw.githubusercontent.com/mgarbiso/markus-config/main/.vimrc

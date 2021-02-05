@@ -52,4 +52,6 @@ Plug 'dense-analysis/ale'
 
 call plug#end()
 
+" Settings for lightline
+set noshowmode
 set laststatus=2

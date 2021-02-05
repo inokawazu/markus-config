@@ -41,6 +41,9 @@ Plug 'JuliaEditorSupport/julia-vim'
 " Multi Language support
 Plug 'sheerun/vim-polyglot'
 
+" Powerline Clone
+ Plug 'itchyny/lightline.vim'
+
 " Support for directory navigation from vim.
 Plug 'preservim/nerdtree'
 

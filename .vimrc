@@ -50,6 +50,9 @@ Plug 'preservim/nerdtree'
 " Linting support for various languages
 Plug 'dense-analysis/ale'
 
+" For adding Vadar, a test suite
+Plug 'junegunn/vader.vim'
+
 call plug#end()
 
 " Settings for lightline

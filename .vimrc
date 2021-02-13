@@ -38,6 +38,9 @@ call plug#begin('~/.vim/plugged')
 " Julia support for vim.
 Plug 'JuliaEditorSupport/julia-vim'
 
+" Autocompletions for vim
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Multi Language support
 Plug 'sheerun/vim-polyglot'
 

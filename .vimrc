@@ -8,6 +8,14 @@ set number
 " This turns on auto suggestions of commands.
 set wildmenu
 
+" for fuzzy file search. 
+" use `:find filename`, tab for autocompletion
+" to fuzzy search just add * beginning or end of filename
+filetype plugin on
+set path+=**
+" fuzzy search result in a menu using tab or shift + tab
+" ^^ can use `:ls` to see open files in buffer and switch between them using `:b filename`.
+
 " Spellcheck
 set spelllang=en_us
 ":set spell to start the spellcheck

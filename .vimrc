@@ -55,9 +55,6 @@ Plug 'sheerun/vim-polyglot'
 " Powerline Clone
 Plug 'itchyny/lightline.vim'
 
-" Latex vim
-Plug 'vim-latex/vim-latex'
-
 " Support for directory navigation from vim.
 Plug 'preservim/nerdtree'
 

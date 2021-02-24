@@ -10,6 +10,9 @@ mkdir -p ~/.vim/colors
 # Downloads the themes for vim.
 curl -sfLo ~/.vim/colors/jellybeans.vim https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
 
+# For vim autocomplete requirement but requires python
+pip install msgpack
+
 #Downloads the .vimrc file
 if [ -f "~/.vimrc" ]; then
     rm "~/.vimrc"

@@ -50,6 +50,9 @@ Plug 'JuliaEditorSupport/julia-vim'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 set omnifunc=syntaxcomplete#Complete
 
+" Python Jedi Auto
+Plug 'davidhalter/jedi-vim'
+
 " Multi Language support
 Plug 'sheerun/vim-polyglot'
 

@@ -49,7 +49,7 @@ Plug 'JuliaEditorSupport/julia-vim'
 " Autocompletions for vim
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " set omnifunc=syntaxcomplete#Complete
-Plug 'ycm-core/YouCompleteMe'
+Plug 'Shougo/neco-vim'
 
 " Python Jedi Auto
 Plug 'davidhalter/jedi-vim'

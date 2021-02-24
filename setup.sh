@@ -14,7 +14,6 @@ curl -sfLo ~/.vim/colors/jellybeans.vim https://raw.githubusercontent.com/nanote
 pip3 install msgpack
 pip3 install --user pynvim
 pip3 install --user --upgrade pynvim
-PATH=$HOME/.local/lib/python3.7/site-packages:$PATH; export PATH
 
 #Downloads the .vimrc file
 if [ -f "~/.vimrc" ]; then

@@ -53,9 +53,6 @@ Plug 'Shougo/neco-vim'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'eagletmt/neco-ghc'
 
-" Python Jedi Auto
-Plug 'davidhalter/jedi-vim'
-
 " Multi Language support
 Plug 'sheerun/vim-polyglot'
 

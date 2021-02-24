@@ -52,10 +52,6 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'Shougo/neco-vim'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'eagletmt/neco-ghc'
-Plug 'Shougo/neco-syntax'
-Plug 'tbodt/deoplete-tabnine'
-Plug 'autozimu/LanguageClient-neovim'
-Plug 'lighttiger2505/deoplete-vim-lsp'
 
 " Python Jedi Auto
 Plug 'davidhalter/jedi-vim'

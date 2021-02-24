@@ -55,7 +55,7 @@ Plug 'eagletmt/neco-ghc'
 Plug 'Shougo/neco-syntax'
 Plug 'tbodt/deoplete-tabnine'
 Plug 'autozimu/LanguageClient-neovim'
-PLug 'lighttiger2505/deoplete-vim-lsp'
+Plug 'lighttiger2505/deoplete-vim-lsp'
 
 " Python Jedi Auto
 Plug 'davidhalter/jedi-vim'

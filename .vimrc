@@ -47,7 +47,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'JuliaEditorSupport/julia-vim'
 
 " Autocompletions for vim
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Autocompletions for vim
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+let g:deoplete#enable_at_startup = 1
 
 " Multi Language support
 Plug 'sheerun/vim-polyglot'

@@ -49,16 +49,6 @@ Plug 'JuliaEditorSupport/julia-vim'
 " Autocompletions for vim
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Autocompletions for vim
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
-
 " Multi Language support
 Plug 'sheerun/vim-polyglot'
 

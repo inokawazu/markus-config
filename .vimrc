@@ -48,6 +48,7 @@ Plug 'JuliaEditorSupport/julia-vim'
 
 " Autocompletions for vim
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+set omnifunc=syntaxcomplete#Complete
 
 " Multi Language support
 Plug 'sheerun/vim-polyglot'

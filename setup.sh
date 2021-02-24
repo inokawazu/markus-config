@@ -15,6 +15,9 @@ pip3 install msgpack
 pip3 install --user pynvim
 pip3 install --user --upgrade pynvim
 
+source /usr/share/defaults/etc/profile
+PATH=$HOME/.local/lib/python3.7/site-packages:$PATH; export PATH
+
 #Downloads the .vimrc file
 if [ -f "~/.vimrc" ]; then
     rm "~/.vimrc"

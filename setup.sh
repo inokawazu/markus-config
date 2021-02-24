@@ -11,7 +11,9 @@ mkdir -p ~/.vim/colors
 curl -sfLo ~/.vim/colors/jellybeans.vim https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
 
 # For vim autocomplete requirement but requires python
-pip install msgpack
+pip3 install msgpack
+pip3 install --user pynvim
+pip3 install --user --upgrade pynvim
 
 #Downloads the .vimrc file
 if [ -f "~/.vimrc" ]; then

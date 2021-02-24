@@ -50,6 +50,8 @@ Plug 'JuliaEditorSupport/julia-vim'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " set omnifunc=syntaxcomplete#Complete
 Plug 'Shougo/neco-vim'
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'eagletmt/neco-ghc'
 
 " Python Jedi Auto
 Plug 'davidhalter/jedi-vim'

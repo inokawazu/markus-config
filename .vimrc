@@ -8,6 +8,9 @@ set number
 " This turns on auto suggestions of commands.
 set wildmenu
 
+" starts matchit
+runtime macros/matchit.vim
+
 " for fuzzy file search. 
 " use `:find filename`, tab for autocompletion
 " to fuzzy search just add * beginning or end of filename
@@ -47,7 +50,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'JuliaEditorSupport/julia-vim'
 
 " Extends the % functionality
-Plug 'adelarsq/vim-matchit'
+" Plug 'adelarsq/vim-matchit'
 
 " Linting
 Plug 'vim-syntastic/syntastic'

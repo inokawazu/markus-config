@@ -46,6 +46,12 @@ call plug#begin('~/.vim/plugged')
 " Julia support for vim.
 Plug 'JuliaEditorSupport/julia-vim'
 
+" Extends the % functionality
+Plug 'adelarsq/vim-matchit'
+
+" Linting
+Plug 'vim-syntastic/syntastic'
+
 " Autocompletions for vim
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " set omnifunc=syntaxcomplete#Complete

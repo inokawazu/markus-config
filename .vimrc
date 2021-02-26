@@ -56,11 +56,14 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'vim-syntastic/syntastic'
 
 " Autocompletions for vim
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " set omnifunc=syntaxcomplete#Complete
-Plug 'Shougo/neco-vim'
-Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'eagletmt/neco-ghc'
+" Plug 'Shougo/neco-vim'
+" Plug 'deoplete-plugins/deoplete-jedi'
+" Plug 'eagletmt/neco-ghc'
+
+" For commenting
+Plug 'tpope/vim-commentary'
 
 " Multi Language support
 Plug 'sheerun/vim-polyglot'

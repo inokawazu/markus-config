@@ -87,5 +87,6 @@ if has('termguicolors')
 endif
 " For dark version.
 set background=dark
-let g:gruvbox_material_background = 'soft'
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_palette = 'original'
 colorscheme gruvbox-material

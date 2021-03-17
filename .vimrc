@@ -45,8 +45,8 @@ call plug#begin('~/.vim/plugged')
 " Julia support for vim.
 Plug 'JuliaEditorSupport/julia-vim'
 
-" Extends the % functionality
-" Plug 'adelarsq/vim-matchit'
+" Many Color Schemes
+Plugin 'flazz/vim-colorschemes'
 
 " Linting
 Plug 'vim-syntastic/syntastic'

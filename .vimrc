@@ -82,6 +82,4 @@ set noshowmode
 set laststatus=2
 
 " This sets the color scheme.
-" colorscheme jellybeans
-colorscheme bluewery
-let g:lightline = { 'colorscheme': 'bluewery' }
+colorscheme jellybeans

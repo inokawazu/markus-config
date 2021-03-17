@@ -65,6 +65,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " For commenting
 Plug 'tpope/vim-commentary'
 
+" For focusing
+Plug 'junegunn/limelight.vim'
+
 " Multi Language support
 Plug 'sheerun/vim-polyglot'
 

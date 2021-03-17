@@ -60,6 +60,9 @@ Plug 'junegunn/limelight.vim'
 " Multi Language support
 Plug 'sheerun/vim-polyglot'
 
+" Gruvbox Material
+Plug 'sainnhe/gruvbox-material'
+
 " Powerline Clone
 Plug 'itchyny/lightline.vim'
 

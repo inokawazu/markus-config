@@ -9,6 +9,7 @@ mkdir -p ~/.vim/colors
 
 # Downloads the themes for vim.
 curl -sfLo ~/.vim/colors/jellybeans.vim https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
+curl -sfLo ~/.vim/colors/bluewery.vim https://raw.githubusercontent.com/relastle/bluewery.vim/master/colors/bluewery.vim
 
 echo "INSTALLED: colors"
 

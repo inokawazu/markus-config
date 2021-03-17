@@ -72,9 +72,6 @@ Plug 'dense-analysis/ale'
 " For adding Vadar, a test suite
 Plug 'junegunn/vader.vim'
 
-" Gruvbox Color
-Plug 'morhetz/gruvbox'
-
 call plug#end()
 
 " Settings for lightline

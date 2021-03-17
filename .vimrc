@@ -28,9 +28,6 @@ set spelllang=en_us
 set nobackup
 set nowritebackup
 
-" This sets the color scheme.
-colorscheme jellybeans
-
 " Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -sfLo ~/.vim/autoload/plug.vim --create-dirs
@@ -41,7 +38,6 @@ endif
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
-
 
 " Vim plugin
 call plug#begin('~/.vim/plugged')
@@ -57,13 +53,12 @@ Plug 'vim-syntastic/syntastic'
 
 " Autocompletions for vim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" set omnifunc=syntaxcomplete#Complete
-" Plug 'Shougo/neco-vim'
-" Plug 'deoplete-plugins/deoplete-jedi'
-" Plug 'eagletmt/neco-ghc'
 
 " For commenting
 Plug 'tpope/vim-commentary'
+
+" Color Schemes
+Plug 'bluz71/vim-nightfly-guicolors'
 
 " For focusing
 Plug 'junegunn/limelight.vim'
@@ -88,3 +83,6 @@ call plug#end()
 " Settings for lightline
 set noshowmode
 set laststatus=2
+
+" This sets the color scheme.
+colorscheme nightfly

@@ -51,6 +51,9 @@ Plug 'vim-syntastic/syntastic'
 " Autocompletions for vim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Cool green colorscheme
+Plug 'relastle/bluewery.vim'
+
 " For commenting
 Plug 'tpope/vim-commentary'
 
@@ -79,4 +82,6 @@ set noshowmode
 set laststatus=2
 
 " This sets the color scheme.
-colorscheme jellybeans
+" colorscheme jellybeans
+colorscheme bluewery
+let g:lightline = { 'colorscheme': 'bluewery' }

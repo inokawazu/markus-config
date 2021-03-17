@@ -57,9 +57,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " For commenting
 Plug 'tpope/vim-commentary'
 
-" Color Schemes
-Plug 'bluz71/vim-nightfly-guicolors'
-
 " For focusing
 Plug 'junegunn/limelight.vim'
 
@@ -85,4 +82,4 @@ set noshowmode
 set laststatus=2
 
 " This sets the color scheme.
-colorscheme nightfly
+colorscheme jellybeans

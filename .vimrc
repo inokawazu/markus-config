@@ -46,7 +46,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'JuliaEditorSupport/julia-vim'
 
 " Many Color Schemes
-Plug 'flazz/vim-colorschemes'
+Plug 'xolox/vim-colorscheme-switcher'
 
 " Linting
 Plug 'vim-syntastic/syntastic'

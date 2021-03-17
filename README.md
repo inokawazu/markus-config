@@ -10,5 +10,5 @@ This repo contains all my favorite configurations of various programs I personal
 
 To run the setup from the terminal (with bash), you can run the following script.
 ```
-curl -s https://raw.githubusercontent.com/mgarbiso/markus-config/main/setup.sh | bash
+curl -s https://raw.githubusercontent.com/kawazugit/markus-config/main/setup.sh | bash
 ```

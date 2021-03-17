@@ -51,9 +51,6 @@ Plug 'vim-syntastic/syntastic'
 " Autocompletions for vim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Cool green colorscheme
-Plug 'relastle/bluewery.vim'
-
 " For commenting
 Plug 'tpope/vim-commentary'
 

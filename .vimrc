@@ -47,8 +47,10 @@ Plug 'JuliaEditorSupport/julia-vim'
 " Linting
 Plug 'vim-syntastic/syntastic'
 
-" Floating Terminals?!
-Plug 'voldikss/vim-floaterm'
+" Make vim like ipython
+Plug 'benmills/vimux'
+Plug 'greghor/vim-pyShell'
+Plug 'julienr/vim-cellmode'
 
 " Autocompletions for vim
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}

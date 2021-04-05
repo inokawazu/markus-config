@@ -22,7 +22,6 @@ set path+=**
 " Spellcheck
 set spelllang=en_us
 ":set spell to start the spellcheck
-" set spell
 
 " Disables the autoback up feature of files of vim
 set nobackup
@@ -48,8 +47,11 @@ Plug 'JuliaEditorSupport/julia-vim'
 " Linting
 Plug 'vim-syntastic/syntastic'
 
+" Floating Terminals?!
+Plug 'voldikss/vim-floaterm'
+
 " Autocompletions for vim
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " For commenting
 Plug 'tpope/vim-commentary'

@@ -53,7 +53,7 @@ Plug 'vim-syntastic/syntastic'
 " Plug 'julienr/vim-cellmode'
 
 " Autocompletions for vim
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " For commenting
 Plug 'tpope/vim-commentary'

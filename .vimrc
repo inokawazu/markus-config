@@ -48,9 +48,9 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'vim-syntastic/syntastic'
 
 " Make vim like ipython
-Plug 'benmills/vimux'
-Plug 'greghor/vim-pyShell'
-Plug 'julienr/vim-cellmode'
+" Plug 'benmills/vimux'
+" Plug 'greghor/vim-pyShell'
+" Plug 'julienr/vim-cellmode'
 
 " Autocompletions for vim
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}

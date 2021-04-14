@@ -1,3 +1,5 @@
+" vi is old
+set nocompatible
 
 " This turns on syntax highlighting.
 syntax on

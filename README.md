@@ -3,7 +3,7 @@ This repo contains all my favorite configurations of various programs I personal
 
 # Program preconfigs to add.
 - [ ] julia **startup.jl**
-- [ ] .vimrc
+- [ ] .zshrc
 - [x] VIM - julia
 - [x] VIM - python
 - [ ] some aliases

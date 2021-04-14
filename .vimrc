@@ -79,6 +79,9 @@ Plug 'dense-analysis/ale'
 " For adding Vadar, a test suite
 Plug 'junegunn/vader.vim'
 
+" for vimwiki
+Plug 'vimwiki/vimwiki'
+
 call plug#end()
 
 " Settings for lightline

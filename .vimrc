@@ -14,7 +14,7 @@ set hidden
 set incsearch
 
 " keep cursor towards the center
-set scrolloff = 10
+set scrolloff=10
 
 " none shall pass 80
 set colorcolumn=80

@@ -21,9 +21,6 @@ curl -sfLo ~/.vim/colors/jellybeans.vim https://raw.githubusercontent.com/nanote
 
 echo "INSTALLED: colors"
 
-# source /usr/share/defaults/etc/profile
-# PATH=$HOME/.local/lib/python3.7/site-packages:$PATH; export PATH
-
 #Downloads the .vimrc file
 if [ -f "~/.vimrc" ]; then
     rm "~/.vimrc"

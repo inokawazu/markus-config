@@ -4,6 +4,21 @@ set nocompatible
 " This turns on syntax highlighting.
 syntax on
 
+" No highlighting
+set nohlsearch
+
+" Hidden buffers
+set hidden
+
+" show matches
+set incsearch
+
+" keep cursor towards the center
+set scrolloff = 10
+
+" none shall pass 80
+set colorcolumn=80
+
 " This turns on line numbering.
 set number 
 

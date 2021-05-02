@@ -99,6 +99,9 @@ Plug 'junegunn/vader.vim'
 " for vimwiki
 Plug 'vimwiki/vimwiki'
 
+" scratchpad for hackers!
+Plug 'metakirby5/codi.vim'
+
 call plug#end()
 
 " Settings for lightline

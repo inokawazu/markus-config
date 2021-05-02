@@ -59,10 +59,10 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin('~/.vim/plugged')
 
 " Julia support for vim.
-Plug 'JuliaEditorSupport/julia-vim'
+" Plug 'JuliaEditorSupport/julia-vim'
 
 " Linting
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 
 " Make vim like ipython
 " Plug 'benmills/vimux'
@@ -76,7 +76,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
 
 " For focusing
-Plug 'junegunn/limelight.vim'
+" Plug 'junegunn/limelight.vim'
 
 " Multi Language support
 Plug 'sheerun/vim-polyglot'
@@ -101,6 +101,9 @@ Plug 'vimwiki/vimwiki'
 
 " scratchpad for hackers!
 Plug 'metakirby5/codi.vim'
+
+" floating terminals
+Plug 'voldikss/vim-floaterm'
 
 call plug#end()
 

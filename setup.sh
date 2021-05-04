@@ -4,6 +4,7 @@ echo "This is my setup script, it is designed to install all of my presets."
 #variables
 REALNAME="Markus Amano"
 CONTACTEMAIL="markus.a.amano@gmail.com"
+GITHUBUSERNAME="inokawazu"
 
 #Notifyset function prints what was set to what. 
 notifyset () {
@@ -25,11 +26,16 @@ echo "INSTALLED: colors"
 if [ -f "~/.vimrc" ]; then
     rm "~/.vimrc"
 fi
-curl -sfLo ~/.vimrc https://raw.githubusercontent.com/mgarbiso/markus-config/main/.vimrc
+curl -sfLo ~/.vimrc https://raw.githubusercontent.com/$GITHUBUSERNAME/markus-config/main/.vimrc
 echo "INSTALLED: .vimrc"
 
-#Downloads the Oh My ZSH! install script and installs Oh My ZSH!
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#Downloads antigen to download all the cool zsh plugins.
+curl -L git.io/antigen > ~/.antigen.zsh
+if [ -f "~/.zshrc" ]; then
+    rm "~/.zshrc"
+fi
+curl -sfLo ~/.zshrc https://raw.githubusercontent.com/$GITHUBUSERNAME/markus-config/main/.zshrc
+echo "INSTALLED: .zshrc"
 
 #Sets git configuration
 git --version 2>&1 >/dev/null

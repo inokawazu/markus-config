@@ -21,3 +21,5 @@ antigen apply
 
 # make vim the defaul editor
 EDITOR=$(which vim)
+
+# custom aliases 

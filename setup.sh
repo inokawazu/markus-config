@@ -5,12 +5,16 @@ echo "This is my setup script, it is designed to install all of my presets."
 REALNAME="Markus Amano"
 CONTACTEMAIL="markus.a.amano@gmail.com"
 GITHUBUSERNAME="inokawazu"
+$REPONAME="markus-config"
 
 #Notifyset function prints what was set to what. 
 notifyset () {
     echo The $1 was set to $2.
 }
 
+saveconfigfile () {
+    curl -sfLo $2/$1 https://raw.githubusercontent.com/$GITHUBUSERNAME/$REPONAME/main/$1
+}
 # Makes the vim plug dir if it does not exist.
 mkdir -p ~/.vim/plugged
 
@@ -26,7 +30,7 @@ echo "INSTALLED: colors"
 if [ -f "~/.vimrc" ]; then
     rm "~/.vimrc"
 fi
-curl -sfLo ~/.vimrc https://raw.githubusercontent.com/$GITHUBUSERNAME/markus-config/main/.vimrc
+saveconfigfile .vimrc ~
 echo "INSTALLED: .vimrc"
 
 #Downloads antigen to download all the cool zsh plugins.
@@ -34,7 +38,7 @@ curl -sfL git.io/antigen > ~/.antigen.zsh
 if [ -f "~/.zshrc" ]; then
     rm "~/.zshrc"
 fi
-curl -sfLo ~/.zshrc https://raw.githubusercontent.com/$GITHUBUSERNAME/markus-config/main/.zshrc
+saveconfigfile .zshrc ~
 echo "INSTALLED: .zshrc"
 
 #Sets git configuration
@@ -47,4 +51,16 @@ if [ $GIT_IS_AVAILABLE -eq 0 ]; then
     notifyset "Git email" $CONTACTEMAIL
     git config --global core.editor vim
     notifyset "Git editor" "vim"
+    git config --global github.user $GITHUBUSERNAME
+    notifyset "Git editor" "vim"
+fi
+
+#Sets julia configuration
+julia --version 2>&1 >/dev/null
+JULIA_IS_AVAILABLE=$?
+if [ $JULIA_IS_AVAILABLE -eq 0 ]; then
+    julia $(curl -s https://raw.githubusercontent.com/$GITHUBUSERNAME/$REPONAME/main/installjuliapkgs.jl) 
+    mkdir -p ~/.julia/config/
+    saveconfigfile startup.jl ~/.julia/config
+    echo "INSTALLED: julia"
 fi

@@ -15,8 +15,6 @@ antigen bundle common-aliases
 # external plugins
 antigen bundle unixorn/git-extra-commands
 # antigen bundle psprint/zsh-navigation-tools
-antigen bundle desyncr/auto-ls
-AUTO_LS_COMMANDS=(exa git-status)
 antigen bundle MichaelAquilina/zsh-you-should-use
 antigen bundle zsh-aliases-exa #second to last for exa (exa must be installed)
 antigen bundle zsh-users/zsh-syntax-highlighting # must be last plugin to get effect

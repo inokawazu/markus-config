@@ -28,6 +28,9 @@ fi
 curl -sfLo ~/.vimrc https://raw.githubusercontent.com/mgarbiso/markus-config/main/.vimrc
 echo "INSTALLED: .vimrc"
 
+#Downloads the Oh My ZSH! install script and installs Oh My ZSH!
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 #Sets git configuration
 git --version 2>&1 >/dev/null
 GIT_IS_AVAILABLE=$?

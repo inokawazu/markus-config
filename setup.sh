@@ -5,7 +5,7 @@ echo "This is my setup script, it is designed to install all of my presets."
 REALNAME="Markus Amano"
 CONTACTEMAIL="markus.a.amano@gmail.com"
 GITHUBUSERNAME="inokawazu"
-$REPONAME="markus-config"
+REPONAME="markus-config"
 
 #Notifyset function prints what was set to what. 
 notifyset () {
@@ -52,7 +52,7 @@ if [ $GIT_IS_AVAILABLE -eq 0 ]; then
     git config --global core.editor vim
     notifyset "Git editor" "vim"
     git config --global github.user $GITHUBUSERNAME
-    notifyset "Git editor" "vim"
+    notifyset "Github username" $GITHUBUSERNAME
 fi
 
 #Sets julia configuration
@@ -60,7 +60,7 @@ julia --version 2>&1 >/dev/null
 JULIA_IS_AVAILABLE=$?
 if [ $JULIA_IS_AVAILABLE -eq 0 ]; then
     julia $(curl -s https://raw.githubusercontent.com/$GITHUBUSERNAME/$REPONAME/main/installjuliapkgs.jl) 
-    mkdir -p ~/.julia/config/
+    mkdir -p ~/.julia/config
     saveconfigfile startup.jl ~/.julia/config
     echo "INSTALLED: julia"
 fi

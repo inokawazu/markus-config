@@ -30,7 +30,7 @@ curl -sfLo ~/.vimrc https://raw.githubusercontent.com/$GITHUBUSERNAME/markus-con
 echo "INSTALLED: .vimrc"
 
 #Downloads antigen to download all the cool zsh plugins.
-curl -L git.io/antigen > ~/.antigen.zsh
+curl -sfL git.io/antigen > ~/.antigen.zsh
 if [ -f "~/.zshrc" ]; then
     rm "~/.zshrc"
 fi

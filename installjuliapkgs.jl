@@ -1,3 +1,1 @@
-packages = "OhMyREPL Revise"
-using Pkg
-Pkg.add(packages)
+packages = "OhMyREPL Revise"; using Pkg; Pkg.add(packages)

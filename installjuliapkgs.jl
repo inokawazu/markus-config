@@ -1,2 +1,6 @@
+packages=["OhMyREPL","Revise"]
+
 using Pkg
-Pkg.add("OhMyREPL Revise")
+for package in packages
+	Pkg.add(package)
+end

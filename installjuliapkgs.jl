@@ -1,1 +1,2 @@
-using Pkg; Pkg.add("OhMyREPL Revise")
+using Pkg
+Pkg.add("OhMyREPL Revise")

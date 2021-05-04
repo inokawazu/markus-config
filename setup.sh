@@ -59,7 +59,7 @@ fi
 julia --version 2>&1 >/dev/null
 JULIA_IS_AVAILABLE=$?
 if [ $JULIA_IS_AVAILABLE -eq 0 ]; then
-    julia -E $(curl -s https://raw.githubusercontent.com/$GITHUBUSERNAME/$REPONAME/main/installjuliapkgs.jl) 
+    julia $(curl -s https://raw.githubusercontent.com/$GITHUBUSERNAME/$REPONAME/main/installjuliapkgs.jl) 
     mkdir -p ~/.julia/config
     saveconfigfile startup.jl ~/.julia/config
     echo "INSTALLED: julia"

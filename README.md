@@ -3,10 +3,10 @@ This repo contains all my favorite configurations of various programs I personal
 
 # Program preconfigs to add.
 - [ ] julia **startup.jl**
-- [ ] .zshrc
+- [x] .zshrc
 - [x] VIM - julia
 - [x] VIM - python
-- [ ] some aliases
+- [x] some aliases
 
 To run the setup from the terminal (with bash), you can run the following script.
 ```

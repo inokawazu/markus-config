@@ -9,11 +9,12 @@ antigen bundle command-not-found
 antigen bundle common-aliases
 # antigen bundle autojump
 # antigen bundle z
-antigen bundle fasd
+# antigen bundle fasd
+# antigen bundle zsh-aliases-exa
 
 # external plugins
 antigen bundle unixorn/git-extra-commands
-antigen bundle psprint/zsh-navigation-tools
+# antigen bundle psprint/zsh-navigation-tools
 antigen bundle desyncr/auto-ls
 antigen bundle MichaelAquilina/zsh-you-should-use
 antigen bundle zsh-users/zsh-syntax-highlighting # must be last plugin to get effect

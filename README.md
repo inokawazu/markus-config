@@ -2,7 +2,7 @@
 This repo contains all my favorite configurations of various programs I personally use.
 
 # Program preconfigs to add.
-- [ ] julia **startup.jl**
+- [x] julia **startup.jl**
 - [x] .zshrc
 - [x] VIM - julia
 - [x] VIM - python

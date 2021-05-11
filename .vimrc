@@ -60,6 +60,8 @@ call plug#begin('~/.vim/plugged')
 
 " Julia support for vim.
 Plug 'JuliaEditorSupport/julia-vim'
+" mathematica support 
+Plug 'voldikss/vim-mma'
 
 " Linting
 " Plug 'vim-syntastic/syntastic'

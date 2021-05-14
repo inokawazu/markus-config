@@ -71,6 +71,9 @@ Plug 'voldikss/vim-mma'
 " Plug 'greghor/vim-pyShell'
 " Plug 'julienr/vim-cellmode'
 
+" Grammar Check (not for spelling)
+Plug 'rhysd/vim-grammarous'
+
 " Autocompletions for vim
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 

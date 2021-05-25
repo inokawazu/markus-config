@@ -99,16 +99,16 @@ Plug 'preservim/nerdtree'
 Plug 'dense-analysis/ale'
 
 " For adding Vadar, a test suite
-Plug 'junegunn/vader.vim'
+" Plug 'junegunn/vader.vim'
 
 " for vimwiki
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 
 " scratchpad for hackers!
-Plug 'metakirby5/codi.vim'
+" Plug 'metakirby5/codi.vim'
 
 " floating terminals
-Plug 'voldikss/vim-floaterm'
+" Plug 'voldikss/vim-floaterm'
 
 call plug#end()
 

@@ -6,6 +6,7 @@ REALNAME="Markus Amano"
 CONTACTEMAIL="markus.a.amano@gmail.com"
 GITHUBUSERNAME="inokawazu"
 REPONAME="markus-config"
+SCRIPT_DIR=$(dirname -- $(readlink -fn -- "$0"))
 
 #Notifyset function prints what was set to what. 
 notifyset () {
@@ -13,14 +14,14 @@ notifyset () {
 }
 
 saveconfigfile () {
-    curl -sfLo $2/$1 https://raw.githubusercontent.com/$GITHUBUSERNAME/$REPONAME/main/$1
+    cp $SCRIPT_DIR/$1 $2/$1 $3
 }
+
 # Makes the vim plug dir if it does not exist.
 mkdir -p ~/.vim/plugged
 
 # Makes the colors folder.
 mkdir -p ~/.vim/colors
-
 # Downloads the themes for vim.
 curl -sfLo ~/.vim/colors/jellybeans.vim https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
 
@@ -30,7 +31,7 @@ echo "INSTALLED: colors"
 if [ -f "~/.vimrc" ]; then
     rm "~/.vimrc"
 fi
-saveconfigfile .vimrc ~
+saveconfigfile .vimrc ~ -i
 echo "INSTALLED: .vimrc"
 
 #Downloads antigen to download all the cool zsh plugins.

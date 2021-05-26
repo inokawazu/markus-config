@@ -8,7 +8,5 @@ This repo contains all my favorite configurations of various programs I personal
 - [x] VIM - python
 - [x] some aliases
 
-To run the setup from the terminal (with bash), you can run the following script.
-```
-curl -s https://raw.githubusercontent.com/inokawazu/markus-config/main/setup.sh | bash
-```
+You can install files by downloading this git repo, cd\`ing into than running
+the setup command.

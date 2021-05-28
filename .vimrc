@@ -32,7 +32,7 @@ runtime macros/matchit.vim
 " use `:find filename`, tab for autocompletion
 " to fuzzy search just add * beginning or end of filename
 filetype plugin on
-set path+=**
+set path+=.,**
 " fuzzy search result in a menu using tab or shift + tab
 " ^^ can use `:ls` to see open files in buffer and switch between them using `:b filename`.
 

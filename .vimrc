@@ -22,9 +22,6 @@ set colorcolumn=80
 " This turns on line numbering.
 set number 
 
-" This turns on auto suggestions of commands.
-set wildmenu
-
 " starts matchit
 runtime macros/matchit.vim
 
@@ -33,6 +30,10 @@ runtime macros/matchit.vim
 " to fuzzy search just add * beginning or end of filename
 filetype plugin on
 set path+=.,**
+
+" This turns on auto suggestions of commands.
+set wildmenu
+
 " fuzzy search result in a menu using tab or shift + tab
 " ^^ can use `:ls` to see open files in buffer and switch between them using `:b filename`.
 

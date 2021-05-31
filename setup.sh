@@ -31,7 +31,7 @@ echo "INSTALLED: colors"
 if [ -f "~/.vimrc" ]; then
     rm "~/.vimrc"
 fi
-saveconfigfile .vimrc ~ -i
+saveconfigfile .vimrc ~
 echo "INSTALLED: .vimrc"
 
 #Downloads antigen to download all the cool zsh plugins.

@@ -2,7 +2,7 @@
 echo "This is my setup script, it is designed to install all of my presets."
 
 #variables
-REALNAME='Markus Amano'
+REALNAME='Markus-Amano'
 CONTACTEMAIL="markus.a.amano@gmail.com"
 GITHUBUSERNAME="inokawazu"
 REPONAME="markus-config"

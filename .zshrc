@@ -25,3 +25,4 @@ EDITOR=$(which vim)
 # custom aliases 
 alias open="xdg-open"
 alias youtube-mp3="youtube-dl --extract-audio --audio-format mp3"
+alias wsf="wolframscript -f"

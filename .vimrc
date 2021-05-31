@@ -117,6 +117,9 @@ call plug#end()
 set noshowmode
 set laststatus=2
 
+" Block movement for Julia
+runtime macros/matchit.vim
+
 " Important!! for color scheme
 if has('termguicolors')
   set termguicolors

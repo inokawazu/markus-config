@@ -73,3 +73,6 @@ if [ $JULIA_IS_AVAILABLE -eq 0 ]; then
     saveconfigfile startup.jl ~/.julia/config
     echo "INSTALLED: julia"
 fi
+
+#Add tmux config file
+saveconfigfile .tmux.conf ~

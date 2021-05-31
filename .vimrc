@@ -125,6 +125,9 @@ call plug#end()
 set noshowmode
 set laststatus=2
 
+"snipmate version setting
+let g:snipMate = { 'snippet_version' : 1 }
+
 " Block movement for Julia
 runtime macros/matchit.vim
 

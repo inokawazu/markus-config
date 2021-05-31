@@ -1,6 +1,6 @@
-packages=["OhMyREPL","Revise"]
+packages = ["OhMyREPL", "Revise"]
 
 using Pkg
 for package in packages
-	Pkg.add(package)
+    Pkg.add(package)
 end

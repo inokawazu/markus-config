@@ -34,13 +34,20 @@ fi
 saveconfigfile .vimrc ~
 echo "INSTALLED: .vimrc"
 
-#Downloads antigen to download all the cool zsh plugins.
-curl -sfL git.io/antigen > ~/.antigen.zsh
-if [ -f "~/.zshrc" ]; then
-    rm "~/.zshrc"
+#checks if zsh is install
+zsh --version 2>&1 >/dev/null
+ZSH_IS_AVAILABLE=$?
+if [ $ZSH_IS_AVAILABLE -neq 0 ]; then
+    #Downloads antigen to download all the cool zsh plugins.
+    curl -sfL git.io/antigen > ~/.antigen.zsh
+    if [ -f "~/.zshrc" ]; then
+        rm "~/.zshrc"
+    fi
+    saveconfigfile .zshrc ~
+    echo "INSTALLED: .zshrc"
+else
+    echo "zsh is not installed on this machine (please install or contact your system admin)."
 fi
-saveconfigfile .zshrc ~
-echo "INSTALLED: .zshrc"
 
 #Sets git configuration
 git --version 2>&1 >/dev/null

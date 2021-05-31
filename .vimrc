@@ -29,11 +29,10 @@ runtime macros/matchit.vim
 " use `:find filename`, tab for autocompletion
 " to fuzzy search just add * beginning or end of filename
 filetype plugin on
-set path+=.,**,$VIMRUNTIME/syntax
+set path+=.,**
 
 " This turns on auto suggestions of commands.
 set wildmenu
-
 " fuzzy search result in a menu using tab or shift + tab
 " ^^ can use `:ls` to see open files in buffer and switch between them using `:b filename`.
 
@@ -92,17 +91,6 @@ Plug 'kdheepak/JuliaFormatter.vim'
 " mathematica support 
 Plug 'voldikss/vim-mma'
 
-" Linting
-Plug 'vim-syntastic/syntastic'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 " Make vim like ipython
 " Plug 'benmills/vimux'
 " Plug 'greghor/vim-pyShell'
@@ -135,10 +123,6 @@ Plug 'preservim/nerdtree'
 " Linting support for various languages
 Plug 'dense-analysis/ale'
 
-" For adding Vadar, a test suite
-" Plug 'junegunn/vader.vim'
-
-" for vimwiki
 " Plug 'vimwiki/vimwiki'
 
 " scratchpad for hackers!

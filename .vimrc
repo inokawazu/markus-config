@@ -29,7 +29,7 @@ runtime macros/matchit.vim
 " use `:find filename`, tab for autocompletion
 " to fuzzy search just add * beginning or end of filename
 filetype plugin on
-set path+=.,**
+set path+=.,**,$VIMRUNTIME/syntax
 
 " This turns on auto suggestions of commands.
 set wildmenu
@@ -93,7 +93,15 @@ Plug 'kdheepak/JuliaFormatter.vim'
 Plug 'voldikss/vim-mma'
 
 " Linting
-" Plug 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Make vim like ipython
 " Plug 'benmills/vimux'

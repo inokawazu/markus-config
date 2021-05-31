@@ -37,7 +37,7 @@ echo "INSTALLED: .vimrc"
 #checks if zsh is install
 zsh --version 2>&1 >/dev/null
 ZSH_IS_AVAILABLE=$?
-if [ $ZSH_IS_AVAILABLE -neq 0 ]; then
+if [ $ZSH_IS_AVAILABLE -ne 1 ]; then
     #Downloads antigen to download all the cool zsh plugins.
     curl -sfL git.io/antigen > ~/.antigen.zsh
     if [ -f "~/.zshrc" ]; then

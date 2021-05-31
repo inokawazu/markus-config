@@ -1,4 +1,4 @@
-pkgs = ["OhMyREPL", "Revise"]
+pkgs = ["OhMyREPL", "Revise", "StaticLint"]
 
 using Pkg
 for package in pkgs

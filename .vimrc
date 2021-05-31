@@ -61,30 +61,32 @@ call plug#begin('~/.vim/plugged')
 
 " Julia support for vim.
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 
-" julia
-let g:default_julia_version = '1.0'
+" Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 
-" language server
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {
-\   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
-\       using LanguageServer;
-\       using Pkg;
-\       import StaticLint;
-\       import SymbolServer;
-\       env_path = dirname(Pkg.Types.Context().env.project_file);
-\       
-\       server = LanguageServer.LanguageServerInstance(stdin, stdout, env_path, "");
-\       server.runlinter = true;
-\       run(server);
-\   ']
-\ }
+" " julia
+" let g:default_julia_version = '1.0'
 
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+" " language server
+" let g:LanguageClient_autoStart = 1
+" let g:LanguageClient_serverCommands = {
+" \   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
+" \       using LanguageServer;
+" \       using Pkg;
+" \       import StaticLint;
+" \       import SymbolServer;
+" \       env_path = dirname(Pkg.Types.Context().env.project_file);
+" \       
+" \       server = LanguageServer.LanguageServerInstance(stdin, stdout, env_path, "");
+" \       server.runlinter = true;
+" \       run(server);
+" \   ']
+" \ }
+
+" nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+
 Plug 'kdheepak/JuliaFormatter.vim'
 
 " mathematica support 

@@ -111,6 +111,12 @@ Plug 'dense-analysis/ale'
 " floating terminals
 " Plug 'voldikss/vim-floaterm'
 
+" Snippet Support 
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+
 call plug#end()
 
 " Settings for lightline

@@ -26,3 +26,5 @@ EDITOR=$(which vim)
 alias open="xdg-open"
 alias youtube-mp3="youtube-dl --extract-audio --audio-format mp3"
 alias wsf="wolframscript -f"
+alias alig="alias | grep"
+alias tat="tmux attach -t"

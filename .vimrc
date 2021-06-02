@@ -61,31 +61,6 @@ call plug#begin('~/.vim/plugged')
 " Julia support for vim.
 Plug 'JuliaEditorSupport/julia-vim'
 
-" Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
-
-" " julia
-" let g:default_julia_version = '1.0'
-
-" " language server
-" let g:LanguageClient_autoStart = 1
-" let g:LanguageClient_serverCommands = {
-" \   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
-" \       using LanguageServer;
-" \       using Pkg;
-" \       import StaticLint;
-" \       import SymbolServer;
-" \       env_path = dirname(Pkg.Types.Context().env.project_file);
-" \       
-" \       server = LanguageServer.LanguageServerInstance(stdin, stdout, env_path, "");
-" \       server.runlinter = true;
-" \       run(server);
-" \   ']
-" \ }
-
-" nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-" nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-" nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
-
 Plug 'kdheepak/JuliaFormatter.vim'
 
 " mathematica support 
@@ -105,14 +80,13 @@ Plug 'rhysd/vim-grammarous'
 " For commenting
 Plug 'tpope/vim-commentary'
 
-" For focusing
-" Plug 'junegunn/limelight.vim'
-
 " Multi Language support
 Plug 'sheerun/vim-polyglot'
 
+" Coloschemes
 " Gruvbox Material
 Plug 'sainnhe/gruvbox-material'
+Plut 'sainnhe/sonokai'
 
 " Powerline Clone
 Plug 'itchyny/lightline.vim'
@@ -158,3 +132,29 @@ set background=dark
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_palette = 'original'
 colorscheme gruvbox-material
+
+" Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
+
+" " julia
+" let g:default_julia_version = '1.0'
+
+" " language server
+" let g:LanguageClient_autoStart = 1
+" let g:LanguageClient_serverCommands = {
+" \   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
+" \       using LanguageServer;
+" \       using Pkg;
+" \       import StaticLint;
+" \       import SymbolServer;
+" \       env_path = dirname(Pkg.Types.Context().env.project_file);
+" \       
+" \       server = LanguageServer.LanguageServerInstance(stdin, stdout, env_path, "");
+" \       server.runlinter = true;
+" \       run(server);
+" \   ']
+" \ }
+
+" nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+

@@ -86,7 +86,7 @@ Plug 'sheerun/vim-polyglot'
 " Coloschemes
 " Gruvbox Material
 Plug 'sainnhe/gruvbox-material'
-Plut 'sainnhe/sonokai'
+Plug 'sainnhe/sonokai'
 
 " Powerline Clone
 Plug 'itchyny/lightline.vim'

@@ -123,15 +123,22 @@ let g:snipMate = { 'snippet_version' : 1 }
 " Block movement for Julia
 runtime macros/matchit.vim
 
-" Important!! for color scheme
+" colorscheme settings
 if has('termguicolors')
   set termguicolors
 endif
+
+let g:sonokai_style = 'maia'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
+let g:sonokai_transparent_background = 1
+colorscheme sonokai
+
 " For dark version.
-set background=dark
-let g:gruvbox_material_background = 'hard'
-let g:gruvbox_material_palette = 'original'
-colorscheme gruvbox-material
+" set background=dark
+" let g:gruvbox_material_background = 'hard'
+" let g:gruvbox_material_palette = 'original'
+" colorscheme gruvbox-material
 
 " Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 

@@ -75,7 +75,7 @@ Plug 'voldikss/vim-mma'
 Plug 'rhysd/vim-grammarous'
 
 " Autocompletions for vim
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " For commenting
 Plug 'tpope/vim-commentary'

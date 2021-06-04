@@ -102,6 +102,8 @@ Plug 'dense-analysis/ale'
 " scratchpad for hackers!
 " Plug 'metakirby5/codi.vim'
 
+Plug 'tpope/vim-fugitive'
+
 " floating terminals
 " Plug 'voldikss/vim-floaterm'
 

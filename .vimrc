@@ -97,6 +97,9 @@ Plug 'preservim/nerdtree'
 " Linting support for various languages
 Plug 'dense-analysis/ale'
 
+" tmux navigation
+Plug 'christoomey/vim-tmux-navigator'
+
 " Plug 'vimwiki/vimwiki'
 
 " scratchpad for hackers!

@@ -1,6 +1,9 @@
 " vi is old
 set nocompatible
 
+" custom leader key
+let mapleader = ","
+
 " This turns on syntax highlighting.
 syntax on
 
@@ -99,6 +102,12 @@ Plug 'dense-analysis/ale'
 
 " tmux navigation
 Plug 'christoomey/vim-tmux-navigator'
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
+
+" For adding commands from vim to bash
+Plug 'preservim/vimux'
 
 " Plug 'vimwiki/vimwiki'
 

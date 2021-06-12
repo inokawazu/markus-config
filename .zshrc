@@ -15,7 +15,7 @@ antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen bundle zsh-users/zsh-syntax-highlighting # must be last plugin to get effect
 
 # theme
-# antigen theme blinks
+antigen theme aussiegeek
 
 # apply config
 antigen apply

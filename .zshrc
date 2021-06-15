@@ -30,3 +30,5 @@ alias wsf="wolframscript -f"
 alias alig="alias | grep"
 alias tat="tmux attach -t"
 alias tns="tmux new -s"
+alias tl=' tmux ls'
+alias vm='set -o vi'

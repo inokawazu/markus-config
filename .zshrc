@@ -32,3 +32,8 @@ alias tat="tmux attach -t"
 alias tns="tmux new -s"
 alias tl=' tmux ls'
 alias vm='set -o vi'
+
+# modern linux 
+lsd --version >/dev/null && alias ls="lsd"
+rg --version >/dev/null && alias grep="rg"
+bat --version >/dev/null && alias cat="bat"

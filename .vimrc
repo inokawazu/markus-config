@@ -119,6 +119,9 @@ Plug 'tpope/vim-fugitive'
 " floating terminals
 " Plug 'voldikss/vim-floaterm'
 
+" VLang highlighting
+Plug 'ollykel/v-vim'
+
 " Snippet Support 
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'

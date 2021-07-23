@@ -103,10 +103,8 @@ map <Leader>vl :VimuxRunLastCommand<CR>
 " For adding commands from vim to bash
 Plug 'preservim/vimux'
 
-" Plug 'vimwiki/vimwiki'
-
-" scratchpad for hackers!
-" Plug 'metakirby5/codi.vim'
+" For latex commands
+Plug 'lervag/vimtex'
 
 Plug 'tpope/vim-fugitive'
 

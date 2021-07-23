@@ -63,16 +63,10 @@ call plug#begin('~/.vim/plugged')
 
 " Julia support for vim.
 Plug 'JuliaEditorSupport/julia-vim'
-
 Plug 'kdheepak/JuliaFormatter.vim'
 
 " mathematica support 
 Plug 'voldikss/vim-mma'
-
-" Make vim like ipython
-" Plug 'benmills/vimux'
-" Plug 'greghor/vim-pyShell'
-" Plug 'julienr/vim-cellmode'
 
 " Grammar Check (not for spelling)
 Plug 'rhysd/vim-grammarous'

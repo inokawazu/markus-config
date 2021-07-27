@@ -1,5 +1,4 @@
 #!/bin/bash
-echo "This is my setup script, it is designed to install all of my presets."
 
 #variables
 REALNAME='Markus-Amano'
@@ -8,6 +7,7 @@ GITHUBUSERNAME="inokawazu"
 REPONAME="markus-config"
 SCRIPT_DIR=$(dirname -- $(readlink -fn -- "$0"))
 
+#Functions
 #Notifyset function prints what was set to what. 
 notifyset () {
     echo The $1 was set to $2.
@@ -16,6 +16,40 @@ notifyset () {
 saveconfigfile () {
     cp $SCRIPT_DIR/$1 $2/$1 $3
 }
+
+
+#Optional
+HELP_STRING="
+usage: ./setup.sh -j
+
+options:
+    j   installs/updates Julia packages and starup.jl
+"
+
+#Sets julia configuration
+setupjulia(){
+    julia --version 2>&1 >/dev/null
+    JULIA_IS_AVAILABLE=$?
+    if [ $JULIA_IS_AVAILABLE -eq 0 ]; then
+        saveconfigfile installjuliapkgs.jl /tmp
+        julia /tmp/installjuliapkgs.jl
+        mkdir -p ~/.julia/config
+        saveconfigfile startup.jl ~/.julia/config
+        echo "INSTALLED: julia packages"
+    fi
+}
+
+while getopts ":j:h" option; do
+   case $option in
+      j) setupjulia;;
+      h) echo $HELP_STRING
+          exit;;
+      \?) echo $HELP_STRING
+          exit;;
+   esac
+done
+
+#MAIN
 
 # Makes the vim plug dir if it does not exist.
 mkdir -p ~/.vim/plugged
@@ -74,25 +108,3 @@ if [ $NODE_IS_AVAILABLE -ne 0 ]; then
 fi
 
 
-#Optional setup
-
-#Sets julia configuration
-setupjulia(){
-    julia --version 2>&1 >/dev/null
-    JULIA_IS_AVAILABLE=$?
-    if [ $JULIA_IS_AVAILABLE -eq 0 ]; then
-        saveconfigfile installjuliapkgs.jl /tmp
-        julia /tmp/installjuliapkgs.jl
-        mkdir -p ~/.julia/config
-        saveconfigfile startup.jl ~/.julia/config
-        echo "INSTALLED: julia packages"
-    fi
-}
-
-while getopts ":j" option; do
-   case $option in
-      j) setupjulia;;
-      \?) echo "flag usage: -j installs/updates Julia stuff" 
-          exit;;
-   esac
-done

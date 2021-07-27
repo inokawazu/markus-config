@@ -63,17 +63,6 @@ if [ $GIT_IS_AVAILABLE -eq 0 ]; then
     notifyset "Github username" $GITHUBUSERNAME
 fi
 
-#Sets julia configuration
-julia --version 2>&1 >/dev/null
-JULIA_IS_AVAILABLE=$?
-if [ $JULIA_IS_AVAILABLE -eq 0 ]; then
-    saveconfigfile installjuliapkgs.jl /tmp
-    julia /tmp/installjuliapkgs.jl
-    mkdir -p ~/.julia/config
-    saveconfigfile startup.jl ~/.julia/config
-    echo "INSTALLED: julia packages"
-fi
-
 #Add tmux config file
 saveconfigfile .tmux.conf ~
 
@@ -83,3 +72,27 @@ NODE_IS_AVAILABLE=$?
 if [ $NODE_IS_AVAILABLE -ne 0 ]; then
     echo "Node is not present, please install node if you want coc to work"
 fi
+
+
+#Optional setup
+
+#Sets julia configuration
+setupjulia(){
+    julia --version 2>&1 >/dev/null
+    JULIA_IS_AVAILABLE=$?
+    if [ $JULIA_IS_AVAILABLE -eq 0 ]; then
+        saveconfigfile installjuliapkgs.jl /tmp
+        julia /tmp/installjuliapkgs.jl
+        mkdir -p ~/.julia/config
+        saveconfigfile startup.jl ~/.julia/config
+        echo "INSTALLED: julia packages"
+    fi
+}
+
+while getopts ":j" option; do
+   case $option in
+      j) setupjulia;;
+      \?) echo "flag usage: -j installs/updates Julia stuff" 
+          exit;;
+   esac
+done

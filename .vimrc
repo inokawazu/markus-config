@@ -136,6 +136,14 @@ runtime macros/matchit.vim
 if has('termguicolors')
   set termguicolors
 endif
+"
+" uses the syntaxcomplete#Complete for autocompletion
+if has("autocmd") && exists("+omnifunc")
+  autocmd Filetype *
+        \ if &omnifunc == "" |
+        \ setlocal omnifunc=syntaxcomplete#Complete |
+        \ endif
+endif
 
 let g:sonokai_style = 'maia'
 let g:sonokai_enable_italic = 1

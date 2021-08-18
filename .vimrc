@@ -19,8 +19,11 @@ set incsearch
 " keep cursor towards the center
 set scrolloff=10
 
-" none shall pass 80
-set colorcolumn=80
+setlocal expandtab       " Replace tabs with spaces.
+autocmd BufRead,BufNewFile *.jl set textwidth=92    " Limit lines according to Julia's CONTRIBUTING guidelines.
+
+" none shall pass 93
+set colorcolumn=93
 
 " blue style tabs
 set tabstop=4       " Set tabstops to a width of four columns.
@@ -161,29 +164,3 @@ colorscheme sonokai
 " let g:gruvbox_material_background = 'hard'
 " let g:gruvbox_material_palette = 'original'
 " colorscheme gruvbox-material
-
-" Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
-
-" " julia
-" let g:default_julia_version = '1.0'
-
-" " language server
-" let g:LanguageClient_autoStart = 1
-" let g:LanguageClient_serverCommands = {
-" \   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
-" \       using LanguageServer;
-" \       using Pkg;
-" \       import StaticLint;
-" \       import SymbolServer;
-" \       env_path = dirname(Pkg.Types.Context().env.project_file);
-" \       
-" \       server = LanguageServer.LanguageServerInstance(stdin, stdout, env_path, "");
-" \       server.runlinter = true;
-" \       run(server);
-" \   ']
-" \ }
-
-" nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-" nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-" nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
-

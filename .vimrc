@@ -22,6 +22,11 @@ set scrolloff=10
 " none shall pass 80
 set colorcolumn=80
 
+" blue style tabs
+set tabstop=4       " Set tabstops to a width of four columns.
+set softtabstop=4   " Determine the behaviour of TAB and BACKSPACE keys with expandtab.
+set shiftwidth=4    " Determine the results of >>, <<, and ==.
+
 " This turns on line numbering.
 set number 
 

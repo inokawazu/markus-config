@@ -80,7 +80,11 @@ Plug 'voldikss/vim-mma'
 Plug 'rhysd/vim-grammarous'
 
 " Autocompletions for vim
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 " For commenting
 Plug 'tpope/vim-commentary'
@@ -127,6 +131,8 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
+
+" Plug 'neovim/nvim-lsp'
 
 call plug#end()
 

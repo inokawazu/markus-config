@@ -92,6 +92,9 @@ Plug 'tpope/vim-commentary'
 " Multi Language support
 Plug 'sheerun/vim-polyglot'
 
+" Wren Support
+Plug 'lluchs/vim-wren'
+
 " Coloschemes
 " Gruvbox Material
 Plug 'sainnhe/gruvbox-material'

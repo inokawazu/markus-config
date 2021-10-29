@@ -121,8 +121,6 @@ Plug 'preservim/vimux'
 " For latex commands
 Plug 'lervag/vimtex'
 
-Plug 'tpope/vim-fugitive'
-
 " floating terminals
 " Plug 'voldikss/vim-floaterm'
 

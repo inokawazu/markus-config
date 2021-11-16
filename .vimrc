@@ -17,7 +17,7 @@ set hidden
 set incsearch
 
 " keep cursor towards the center
-set scrolloff=10
+set scrolloff=5
 
 setlocal expandtab       " Replace tabs with spaces.
 autocmd BufRead,BufNewFile *.jl set textwidth=92    " Limit lines according to Julia's CONTRIBUTING guidelines.
@@ -73,18 +73,17 @@ call plug#begin('~/.vim/plugged')
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'kdheepak/JuliaFormatter.vim'
 
-" mathematica support 
-Plug 'voldikss/vim-mma'
-
-" Grammar Check (not for spelling)
-Plug 'rhysd/vim-grammarous'
+" Mathematica support 
+" Plug 'voldikss/vim-mma'
 
 " Autocompletions for vim
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'mattn/vim-lsp-settings'
+" Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'thomasfaingnaert/vim-lsp-snippets'
+" Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 
 " For commenting
 Plug 'tpope/vim-commentary'
@@ -94,6 +93,9 @@ Plug 'sheerun/vim-polyglot'
 
 " Wren Support
 Plug 'lluchs/vim-wren'
+
+" VLang highlighting
+Plug 'ollykel/v-vim'
 
 " Coloschemes
 " Gruvbox Material
@@ -106,43 +108,33 @@ Plug 'itchyny/lightline.vim'
 " Support for directory navigation from vim.
 Plug 'preservim/nerdtree'
 
-" Linting support for various languages
-Plug 'dense-analysis/ale'
-
 " tmux navigation
 Plug 'christoomey/vim-tmux-navigator'
-" Prompt for a command to run
-map <Leader>vp :VimuxPromptCommand<CR>
-map <Leader>vl :VimuxRunLastCommand<CR>
 
 " For adding commands from vim to bash
 Plug 'preservim/vimux'
 
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
+
 " For latex commands
 Plug 'lervag/vimtex'
 
-" floating terminals
-" Plug 'voldikss/vim-floaterm'
-
-" VLang highlighting
-Plug 'ollykel/v-vim'
-
 " Snippet Support 
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-Plug 'honza/vim-snippets'
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'tomtom/tlib_vim'
+" Plug 'garbas/vim-snipmate'
+" Plug 'honza/vim-snippets'
 
-" Plug 'neovim/nvim-lsp'
+" Linting support for various languages
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
 " Settings for lightline
 set noshowmode
 set laststatus=2
-
-"snipmate version setting
-let g:snipMate = { 'snippet_version' : 1 }
 
 " Block movement for Julia
 runtime macros/matchit.vim
@@ -151,19 +143,16 @@ runtime macros/matchit.vim
 if has('termguicolors')
   set termguicolors
 endif
-"
-" uses the syntaxcomplete#Complete for autocompletion
-if has("autocmd") && exists("+omnifunc")
-  autocmd Filetype *
-        \ if &omnifunc == "" |
-        \ setlocal omnifunc=syntaxcomplete#Complete |
-        \ endif
-endif
+
+" ale completion
+let g:ale_completion_enabled = 1
+set omnifunc=ale#completion#OmniFunc
+let g:ale_completion_max_suggestions = 20
 
 let g:sonokai_style = 'maia'
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 1
-let g:sonokai_transparent_background = 1
+let g:sonokai_transparent_background = 0
 colorscheme sonokai
 
 " For dark version.

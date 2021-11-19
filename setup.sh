@@ -99,12 +99,3 @@ fi
 
 #Add tmux config file
 saveconfigfile .tmux.conf ~
-
-#Checks if node present
-node --version 2>&1 >/dev/null
-NODE_IS_AVAILABLE=$?
-if [ $NODE_IS_AVAILABLE -ne 0 ]; then
-    echo "Node is not present, please install node if you want coc to work"
-fi
-
-

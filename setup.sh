@@ -39,7 +39,7 @@ setupjulia(){
     fi
 }
 
-while getopts ":j:h" option; do
+while getopts "jh" option; do
    case $option in
       j) setupjulia;;
       h) echo $HELP_STRING

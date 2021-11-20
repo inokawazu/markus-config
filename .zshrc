@@ -34,6 +34,6 @@ alias tl=' tmux ls'
 alias vm='set -o vi'
 
 # modern linux 
-lsd --version >/dev/null && alias ls="lsd"
-rg --version >/dev/null && alias grep="rg"
-bat --version >/dev/null && alias cat="bat"
+lsd --version >/dev/null 2>&1 && alias ls="lsd"
+rg --version >/dev/null 2>&1 && alias grep="rg"
+bat --version >/dev/null 2>&1 && alias cat="bat"

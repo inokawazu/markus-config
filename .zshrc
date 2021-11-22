@@ -23,6 +23,9 @@ antigen apply
 # make vim the defaul editor
 EDITOR=$(which vim)
 
+# append .local/bin to the path
+PATH="$HOME"/.local/bin:$PATH
+
 # custom aliases 
 alias open="xdg-open"
 alias youtube-mp3="youtube-dl --extract-audio --audio-format mp3"

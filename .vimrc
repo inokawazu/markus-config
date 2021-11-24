@@ -1,34 +1,25 @@
 " vi is old
 set nocompatible
 
-" custom leader key
 let mapleader = ","
 
 " This turns on syntax highlighting.
 syntax on
 
-" No highlighting
 set nohlsearch
-
-" Hidden buffers
 set hidden
-
-" show matches
 set incsearch
-
-" keep cursor towards the center
-set scrolloff=5
+set scrolloff=10
 
 setlocal expandtab       " Replace tabs with spaces.
 autocmd BufRead,BufNewFile *.jl set textwidth=92    " Limit lines according to Julia's CONTRIBUTING guidelines.
 
-" none shall pass 93
-set colorcolumn=93
-
-" blue style tabs
+" Begin Julia Styling
+set colorcolumn=93 " none shall pass 93
 set tabstop=4       " Set tabstops to a width of four columns.
 set softtabstop=4   " Determine the behaviour of TAB and BACKSPACE keys with expandtab.
 set shiftwidth=4    " Determine the results of >>, <<, and ==.
+" End Julia Styling
 
 " This turns on line numbering.
 set number 
@@ -37,21 +28,12 @@ set number
 runtime macros/matchit.vim
 
 " for fuzzy file search. 
-" use `:find filename`, tab for autocompletion
-" to fuzzy search just add * beginning or end of filename
 filetype plugin on
 set path+=.,**
-
-" This turns on auto suggestions of commands.
 set wildmenu
-" fuzzy search result in a menu using tab or shift + tab
-" ^^ can use `:ls` to see open files in buffer and switch between them using `:b filename`.
 
-" Spellcheck
 set spelllang=en_us
-":set spell to start the spellcheck
 
-" Disables the autoback up feature of files of vim
 set nobackup
 set nowritebackup
 
@@ -66,69 +48,39 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 
-" Vim plugin
+" Begin Vim plugins
 call plug#begin('~/.vim/plugged')
 
 " Julia support for vim.
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'kdheepak/JuliaFormatter.vim'
 
-" Mathematica support 
-" Plug 'voldikss/vim-mma'
-
-" Autocompletions for vim
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'prabirshrestha/vim-lsp'
-" Plug 'mattn/vim-lsp-settings'
-" Plug 'prabirshrestha/asyncomplete.vim'
-" Plug 'prabirshrestha/asyncomplete-lsp.vim'
-" Plug 'thomasfaingnaert/vim-lsp-snippets'
-" Plug 'thomasfaingnaert/vim-lsp-ultisnips'
-
-" For commenting
 Plug 'tpope/vim-commentary'
 
-" Multi Language support
 Plug 'sheerun/vim-polyglot'
-
-" Wren Support
 Plug 'lluchs/vim-wren'
-
-" VLang highlighting
 Plug 'ollykel/v-vim'
+Plug 'lervag/vimtex'
 
 " Coloschemes
-" Gruvbox Material
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
 
 " Powerline Clone
 Plug 'itchyny/lightline.vim'
 
-" Support for directory navigation from vim.
 Plug 'preservim/nerdtree'
 
-" tmux navigation
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator' " tmux navigation
 
-" For adding commands from vim to bash
-Plug 'preservim/vimux'
+
+Plug 'preservim/vimux' " For adding commands from vim to bash
 
 " Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>
 map <Leader>vl :VimuxRunLastCommand<CR>
 
-" For latex commands
-Plug 'lervag/vimtex'
-
-" Snippet Support 
-" Plug 'MarcWeber/vim-addon-mw-utils'
-" Plug 'tomtom/tlib_vim'
-" Plug 'garbas/vim-snipmate'
-" Plug 'honza/vim-snippets'
-
-" Linting support for various languages
-Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale' " Linting support for various languages
 
 call plug#end()
 
@@ -152,11 +104,4 @@ let g:ale_completion_max_suggestions = 20
 let g:sonokai_style = 'maia'
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 1
-let g:sonokai_transparent_background = 0
 colorscheme sonokai
-
-" For dark version.
-" set background=dark
-" let g:gruvbox_material_background = 'hard'
-" let g:gruvbox_material_palette = 'original'
-" colorscheme gruvbox-material

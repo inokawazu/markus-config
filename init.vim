@@ -24,7 +24,8 @@ runtime macros/matchit.vim
 " Begin Vim plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'kdheepak/JuliaFormatter.vim'
 Plug 'tpope/vim-commentary'
@@ -37,6 +38,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'christoomey/vim-tmux-navigator' " tmux navigation
 Plug 'preservim/vimux' " For adding commands from vim to bash
+Plug 'dense-analysis/ale' " Linting support for various languages
 
 call plug#end()
 
@@ -45,3 +47,10 @@ map <Leader>vp :VimuxPromptCommand<CR>
 map <Leader>vl :VimuxRunLastCommand<CR>
 
 colorscheme gruvbox-material
+
+" ale completion
+let g:ale_completion_enabled = 1
+set omnifunc=ale#completion#OmniFunc
+let g:ale_completion_max_suggestions = 20
+
+let g:completion_chain_complete_list = { 'default' : { 'default' : [ {'complete_items' : ['lsp', 'snippet']}, {'mode' : 'file'} ], 'comment' : [], 'string' : [] } }

@@ -32,7 +32,7 @@ setupjulia(){
     JULIA_IS_AVAILABLE=$?
     if [ $JULIA_IS_AVAILABLE -eq 0 ]; then
         saveconfigfile installjuliapkgs.jl /tmp
-        julia /tmp/installjuliapkgs.jl
+        julia --startup-file=no /tmp/installjuliapkgs.jl
         mkdir -p ~/.julia/config
         saveconfigfile startup.jl ~/.julia/config
         echo "INSTALLED: julia packages"

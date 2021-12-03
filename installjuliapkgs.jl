@@ -1,8 +1,8 @@
-pkgs = ["OhMyREPL", "Revise", "Pluto"]
+pkgs = ["OhMyREPL", "Revise", "Pluto", "JET"]
 
 using Pkg
 Pkg.add(pkgs)
 
-# for package in pkgs
-#     Pkg.add(package)
-# end
+pkg"add LanguageServer#master"
+pkg"add StaticLint#master"
+pkg"add SymbolServer#master"

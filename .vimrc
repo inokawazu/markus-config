@@ -70,8 +70,6 @@ Plug 'sainnhe/sonokai'
 " Powerline Clone
 Plug 'itchyny/lightline.vim'
 
-Plug 'preservim/nerdtree'
-
 " Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>
 map <Leader>vl :VimuxRunLastCommand<CR>

@@ -22,7 +22,8 @@ set shiftwidth=4    " Determine the results of >>, <<, and ==.
 " End Julia Styling
 
 " This turns on line numbering.
-set number 
+set relativenumber
+set number
 
 " starts matchit
 runtime macros/matchit.vim

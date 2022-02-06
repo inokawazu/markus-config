@@ -76,7 +76,14 @@ map <Leader>vl :VimuxRunLastCommand<CR>
 
 Plug 'dense-analysis/ale' " Linting support for various languages
 
+Plug 'jpalardy/vim-slime'
+
 call plug#end()
+
+" slime the tmux!
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+let g:slime_paste_file = tempname()
 
 " Settings for lightline
 set noshowmode

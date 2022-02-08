@@ -44,3 +44,6 @@ alias pluto='julia --project -e "using Pluto; Pluto.run()"'
 lsd --version >/dev/null 2>&1 && alias ls="lsd"
 rg --version >/dev/null 2>&1 && alias grep="rg"
 bat --version >/dev/null 2>&1 && alias cat="bat"
+
+# media playback
+bat --version >/dev/null 2>&1 && alias mpa="mpv --no-video"

@@ -96,13 +96,13 @@ runtime macros/matchit.vim
 if has('termguicolors')
   set termguicolors
 endif
+let g:sonokai_style = 'maia'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
+let g:sonokai_transparent_background = 1
+colorscheme sonokai
 
 " ale completion
 let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_max_suggestions = 20
-
-let g:sonokai_style = 'maia'
-let g:sonokai_enable_italic = 1
-let g:sonokai_disable_italic_comment = 1
-colorscheme sonokai

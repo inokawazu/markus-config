@@ -66,6 +66,7 @@ Plug 'lervag/vimtex'
 " Coloschemes
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
+Plug 'mazleo/vim-astro'
 
 " Powerline Clone
 Plug 'itchyny/lightline.vim'
@@ -76,14 +77,7 @@ map <Leader>vl :VimuxRunLastCommand<CR>
 
 Plug 'dense-analysis/ale' " Linting support for various languages
 
-Plug 'jpalardy/vim-slime'
-
 call plug#end()
-
-" slime the tmux!
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
-let g:slime_paste_file = tempname()
 
 " Settings for lightline
 set noshowmode
@@ -96,13 +90,13 @@ runtime macros/matchit.vim
 if has('termguicolors')
   set termguicolors
 endif
-let g:sonokai_style = 'maia'
-let g:sonokai_enable_italic = 1
-let g:sonokai_disable_italic_comment = 1
-let g:sonokai_transparent_background = 1
-colorscheme sonokai
 
 " ale completion
 let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_max_suggestions = 20
+
+let g:sonokai_style = 'maia'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
+colorscheme sonokai

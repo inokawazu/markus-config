@@ -11,6 +11,7 @@ antigen bundle common-aliases
 # external plugins
 antigen bundle MichaelAquilina/zsh-you-should-use
 antigen bundle unixorn/autoupdate-antigen.zshplugin
+antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting # must be last plugin to get effect
 
 # theme

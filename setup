@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/bin/env bash
 #variables
 REALNAME='Markus-Amano'
 CONTACTEMAIL="markus.a.amano@gmail.com"

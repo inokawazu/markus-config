@@ -21,10 +21,10 @@ antigen theme aussiegeek
 antigen apply
 
 # make vim the defaul editor
-EDITOR=$(which vim)
+export EDITOR=$(which vim)
 
 # append .local/bin to the path
-PATH="$HOME"/.local/bin:$PATH
+export PATH="$HOME"/.local/bin:$PATH
 
 # custom aliases 
 alias open="xdg-open"

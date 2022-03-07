@@ -15,7 +15,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting # must be last plugin to get effect
 
 # theme
-antigen theme aussiegeek
+antigen theme frontcube
 
 # apply config
 antigen apply

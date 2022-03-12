@@ -71,10 +71,6 @@ Plug 'mazleo/vim-astro'
 " Powerline Clone
 Plug 'itchyny/lightline.vim'
 
-" Prompt for a command to run
-map <Leader>vp :VimuxPromptCommand<CR>
-map <Leader>vl :VimuxRunLastCommand<CR>
-
 Plug 'dense-analysis/ale' " Linting support for various languages
 
 call plug#end()
@@ -95,6 +91,7 @@ endif
 let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_max_suggestions = 20
+let g:ale_floating_preview = 1
 
 let g:sonokai_style = 'maia'
 let g:sonokai_enable_italic = 1

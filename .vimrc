@@ -71,7 +71,6 @@ Plug 'mazleo/vim-astro'
 " Powerline Clone
 Plug 'itchyny/lightline.vim'
 
-<<<<<<< HEAD
 " Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>
 map <Leader>vl :VimuxRunLastCommand<CR>
@@ -82,15 +81,11 @@ Plug 'machakann/vim-lsp-julia'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'mattn/vim-lsp-settings'
-
 let g:asyncomplete_auto_popup = 1
 let g:lsp_virtual_text_enabled = 0
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_diagnostics_enabled = 1
 let g:lsp_signs_enabled = 1
-=======
-Plug 'dense-analysis/ale' " Linting support for various languages
->>>>>>> 6ce315232621bc383c12228a215dc68fe1989abe
 
 call plug#end()
 
@@ -107,16 +102,9 @@ if has('termguicolors')
 endif
 
 " ale completion
-<<<<<<< HEAD
 " let g:ale_completion_enabled = 1
 " set omnifunc=ale#completion#OmniFunc
 " let g:ale_completion_max_suggestions = 20
-=======
-let g:ale_completion_enabled = 1
-set omnifunc=ale#completion#OmniFunc
-let g:ale_completion_max_suggestions = 20
-let g:ale_floating_preview = 1
->>>>>>> 6ce315232621bc383c12228a215dc68fe1989abe
 
 let g:sonokai_style = 'maia'
 let g:sonokai_enable_italic = 1

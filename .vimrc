@@ -28,11 +28,6 @@ set number
 " starts matchit
 runtime macros/matchit.vim
 
-" for fuzzy file search. 
-filetype plugin on
-set path+=.,**
-set wildmenu
-
 set spelllang=en_us
 
 set nobackup

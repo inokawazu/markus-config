@@ -25,6 +25,9 @@ set shiftwidth=4    " Determine the results of >>, <<, and ==.
 set relativenumber
 set number
 
+" wildmenu is actually pretty neat!
+set wildmenu
+
 " starts matchit
 runtime macros/matchit.vim
 

@@ -58,7 +58,7 @@ Plug 'tpope/vim-commentary'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'lluchs/vim-wren'
-Plug 'ollykel/vim-v'
+Plug 'cheap-glitch/vim-v'
 Plug 'lervag/vimtex'
 
 " Coloschemes

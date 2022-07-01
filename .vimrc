@@ -73,9 +73,12 @@ Plug 'mazleo/vim-astro'
 Plug 'itchyny/lightline.vim'
 
 " Prompt for a command to run
-Plug 'preservim/vimux'
-map <Leader>vp :VimuxPromptCommand<CR>
-map <Leader>vl :VimuxRunLastCommand<CR>
+Plug 'jgdavey/tslime.vim'
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
+vnoremap <leader><leader> <Plug>SendSelectionToTmux
+nnoremap <leader><leader> <Plug>NormalModeSendToTmux
+
 
 " Plug 'dense-analysis/ale' " Linting support for various languages
 Plug 'prabirshrestha/vim-lsp'

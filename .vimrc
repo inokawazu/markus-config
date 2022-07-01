@@ -70,6 +70,7 @@ Plug 'mazleo/vim-astro'
 Plug 'itchyny/lightline.vim'
 
 " Prompt for a command to run
+Plug 'preservim/vimux'
 map <Leader>vp :VimuxPromptCommand<CR>
 map <Leader>vl :VimuxRunLastCommand<CR>
 

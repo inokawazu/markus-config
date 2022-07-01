@@ -50,6 +50,9 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 " Begin Vim plugins
 call plug#begin('~/.vim/plugged')
 
+" Wolfram Support
+Plug 'rsmenon/vim-mathematica'
+
 " Julia support for vim.
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'kdheepak/JuliaFormatter.vim'

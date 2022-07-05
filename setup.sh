@@ -62,9 +62,15 @@ echo "INSTALLED: colors"
 
 #vim
 saveconfigfile .vimrc ~
+echo "INSTALLED: .vimrc"
+
 #nvim
 saveconfigfile init.vim ~/.config/nvim/
-echo "INSTALLED: .vimrc"
+sh -sc 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+#
+echo "Installed nvim stuff"
+
 
 #checks if zsh is install
 zsh --version 2>&1 >/dev/null

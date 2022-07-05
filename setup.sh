@@ -60,11 +60,10 @@ curl -sfLo ~/.vim/colors/jellybeans.vim https://raw.githubusercontent.com/nanote
 
 echo "INSTALLED: colors"
 
-#Downloads the .vimrc file
-if [ -f "~/.vimrc" ]; then
-    rm "~/.vimrc"
-fi
+#vim
 saveconfigfile .vimrc ~
+#nvim
+saveconfigfile init.vim ~/.config/nvim/
 echo "INSTALLED: .vimrc"
 
 #checks if zsh is install
@@ -90,8 +89,8 @@ if [ $GIT_IS_AVAILABLE -eq 0 ]; then
     notifyset "Git name" $REALNAME
     git config --global user.email $CONTACTEMAIL
     notifyset "Git email" $CONTACTEMAIL
-    git config --global core.editor vim
-    notifyset "Git editor" "vim"
+    git config --global core.editor nvim
+    notifyset "Git editor" "nvim"
     git config --global github.user $GITHUBUSERNAME
     notifyset "Github username" $GITHUBUSERNAME
 fi

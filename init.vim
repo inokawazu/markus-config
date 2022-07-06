@@ -46,6 +46,7 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'kdheepak/JuliaFormatter.vim'
 
 Plug 'tpope/vim-commentary'
+autocmd FileType mma setlocal commentstring=(*\ %s\ *) 
 
 Plug 'sheerun/vim-polyglot'
 Plug 'lluchs/vim-wren'

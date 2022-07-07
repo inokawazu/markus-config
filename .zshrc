@@ -21,7 +21,7 @@ antigen theme frontcube
 antigen apply
 
 # make vim the defaul editor
-export EDITOR=$(which vim)
+export EDITOR=$(which nvim)
 
 # append .local/bin to the path
 export PATH="$HOME"/.local/bin:$PATH
@@ -46,4 +46,6 @@ rg --version >/dev/null 2>&1 && alias grep="rg"
 bat --version >/dev/null 2>&1 && alias cat="bat"
 
 # media playback
-bat --version >/dev/null 2>&1 && alias mpa="mpv --no-video"
+mpv --version >/dev/null 2>&1 && alias mpa="mpv --no-video"
+
+nvim --version >/dev/null 2>&1 && alias vim="nvim"

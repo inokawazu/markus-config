@@ -1,9 +1,9 @@
 source ~/.antigen.zsh
 
-# Load the oh-my-zsh's library.
+# # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-# plugins with oh-my-zsh
+# # plugins with oh-my-zsh
 antigen bundle git
 antigen bundle command-not-found
 antigen bundle common-aliases
@@ -21,7 +21,7 @@ antigen theme frontcube
 antigen apply
 
 # make vim the defaul editor
-export EDITOR=$(which vim)
+export EDITOR=$(which nvim)
 
 # append .local/bin to the path
 export PATH="$HOME"/.local/bin:$PATH
@@ -46,4 +46,7 @@ rg --version >/dev/null 2>&1 && alias grep="rg"
 bat --version >/dev/null 2>&1 && alias cat="bat"
 
 # media playback
-bat --version >/dev/null 2>&1 && alias mpa="mpv --no-video"
+mpv --version >/dev/null 2>&1 && alias mpa="mpv --no-video"
+
+# neovim is king!
+# nvim --version >/dev/null 2>&1 && alias vim="nvim"

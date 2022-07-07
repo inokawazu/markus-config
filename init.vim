@@ -35,11 +35,15 @@ set spelllang=en_us
 set nobackup
 set nowritebackup
 
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
 " Plugins
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-commentary'
-autocmd FileType mma setlocal commentstring=(*\ %s\ *) 
 
 Plug 'sheerun/vim-polyglot'
 Plug 'lluchs/vim-wren'
@@ -79,18 +83,12 @@ set completeopt=menu,menuone,noselect
 Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
-" Plug 'prabirshrestha/vim-lsp'
-" Plug 'machakann/vim-lsp-julia'
-" Plug 'prabirshrestha/asyncomplete.vim'
-" Plug 'prabirshrestha/asyncomplete-lsp.vim'
-" Plug 'mattn/vim-lsp-settings'
-" let g:asyncomplete_auto_popup = 1
-" let g:lsp_virtual_text_enabled = 0
-" let g:lsp_diagnostics_echo_cursor = 1
-" let g:lsp_diagnostics_enabled = 1
-" let g:lsp_signs_enabled = 1
-
 call plug#end()
+
+autocmd FileType mma setlocal commentstring=(*\ %s\ *) 
+
+let g:sonokai_style = 'maia'
+colorscheme gruvbox-material
 
 lua <<EOF
   -- Setup nvim-cmp.
@@ -128,15 +126,6 @@ lua <<EOF
     })
   })
 
-  -- Set configuration for specific filetype.
-  -- cmp.setup.filetype('gitcommit', {
-  --   sources = cmp.config.sources({
-  --     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-  --   }, {
-  --     { name = 'buffer' },
-  --   })
-  -- })
-
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline('/', {
     mapping = cmp.mapping.preset.cmdline(),
@@ -165,6 +154,3 @@ lua <<EOF
     server:setup(opts)
     end)
 EOF
-
-let g:sonokai_style = 'maia'
-colorscheme gruvbox-material

@@ -48,5 +48,4 @@ bat --version >/dev/null 2>&1 && alias cat="bat"
 # media playback
 mpv --version >/dev/null 2>&1 && alias mpa="mpv --no-video"
 
-# neovim is king!
-# nvim --version >/dev/null 2>&1 && alias vim="nvim"
+nvim --version >/dev/null 2>&1 && alias vim="nvim"

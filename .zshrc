@@ -49,3 +49,6 @@ bat --version >/dev/null 2>&1 && alias cat="bat"
 mpv --version >/dev/null 2>&1 && alias mpa="mpv --no-video"
 
 nvim --version >/dev/null 2>&1 && alias vim="nvim"
+
+# julia settings
+JULIA_NUM_THREADS=auto

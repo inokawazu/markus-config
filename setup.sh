@@ -53,13 +53,6 @@ done
 # Makes the vim plug dir if it does not exist.
 mkdir -p ~/.vim/plugged
 
-# Makes the colors folder.
-mkdir -p ~/.vim/colors
-# Downloads the themes for vim.
-curl -sfLo ~/.vim/colors/jellybeans.vim https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
-
-echo "INSTALLED: colors"
-
 #vim
 saveconfigfile .vimrc ~
 echo "INSTALLED: .vimrc"

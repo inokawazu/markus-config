@@ -57,6 +57,7 @@ Plug 'kdheepak/JuliaFormatter.vim'
 " Coloschemes
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
+Plug 'nanotech/jellybeans.vim'
 
 " Powerline Clone
 Plug 'itchyny/lightline.vim'

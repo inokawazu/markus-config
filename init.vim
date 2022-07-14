@@ -82,6 +82,7 @@ set completeopt=menu,menuone,noselect
 " For ultisnips users.
 Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 

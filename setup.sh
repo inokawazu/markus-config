@@ -13,7 +13,7 @@ notifyset () {
 }
 
 saveconfigfile () {
-    cp $SCRIPT_DIR/$1 $2/$1 $3
+    ln -sf $SCRIPT_DIR/$1 $2
 }
 
 
@@ -30,10 +30,10 @@ setupjulia(){
     julia --version 2>&1 >/dev/null
     JULIA_IS_AVAILABLE=$?
     if [ $JULIA_IS_AVAILABLE -eq 0 ]; then
-        saveconfigfile installjuliapkgs.jl /tmp
-        julia --startup-file=no /tmp/installjuliapkgs.jl
-        mkdir -p ~/.julia/config
-        saveconfigfile startup.jl ~/.julia/config
+        # cp installjuliapkgs.jl /tmp
+        julia --startup-file=no $SCRIPT_DIR/installjuliapkgs.jl
+        mkdir -p $HOME/.julia/config
+        saveconfigfile startup.jl $HOME/.julia/config/startup.jl
         echo "INSTALLED: julia packages"
     fi
 }
@@ -53,20 +53,13 @@ done
 # Makes the vim plug dir if it does not exist.
 mkdir -p ~/.vim/plugged
 
-# Makes the colors folder.
-mkdir -p ~/.vim/colors
-# Downloads the themes for vim.
-curl -sfLo ~/.vim/colors/jellybeans.vim https://raw.githubusercontent.com/nanotech/jellybeans.vim/master/colors/jellybeans.vim
-
-echo "INSTALLED: colors"
-
 #vim
-saveconfigfile .vimrc ~
-echo "INSTALLED: .vimrc"
+saveconfigfile vimrc $HOME/.vimrc
+echo "INSTALLED: vimrc"
 
 #nvim
 mkdir -p ~/.config/nvim/
-saveconfigfile init.vim ~/.config/nvim/
+saveconfigfile init.vim $HOME/.config/nvim/init.vim
 sh -c 'curl -sfLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 python3 --version 2>&1 >/dev/null && python3 -m pip install --user --upgrade pynvim
@@ -82,7 +75,7 @@ if [ $ZSH_IS_AVAILABLE -ne 1 ]; then
     if [ -f "~/.zshrc" ]; then
         rm "~/.zshrc"
     fi
-    saveconfigfile .zshrc ~
+    saveconfigfile zshrc $HOME/.zshrc
     echo "INSTALLED: .zshrc"
 else
     echo "zsh is not installed on this machine (please install or contact your system admin)."
@@ -103,4 +96,4 @@ if [ $GIT_IS_AVAILABLE -eq 0 ]; then
 fi
 
 #Add tmux config file
-saveconfigfile .tmux.conf ~
+saveconfigfile tmux.conf $HOME/.tmux.conf

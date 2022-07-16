@@ -69,6 +69,7 @@ vnoremap <leader><leader> <Plug>SendSelectionToTmux
 nnoremap <leader><leader> <Plug>NormalModeSendToTmux
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'ray-x/cmp-treesitter'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
@@ -160,6 +161,7 @@ lua <<EOF
         )
     }),
     sources = cmp.config.sources({
+      { name = 'treesitter' },
       { name = 'nvim_lsp' },
       -- { name = 'vsnip' }, -- For vsnip users.
       -- { name = 'luasnip' }, -- For luasnip users.

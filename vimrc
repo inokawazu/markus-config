@@ -10,6 +10,7 @@ set nohlsearch
 set hidden
 set incsearch
 set scrolloff=10
+set mmp=10000 " more memory for pattern matching!
 
 setlocal expandtab       " Replace tabs with spaces.
 autocmd BufRead,BufNewFile *.jl set textwidth=92    " Limit lines according to Julia's CONTRIBUTING guidelines.

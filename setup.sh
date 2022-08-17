@@ -22,7 +22,7 @@ HELP_STRING="
 usage: ./setup.sh -j
 
 options:
-    j   installs/updates Julia packages and starup.jl
+    j   installs/updates Julia packages and startup.jl
 "
 
 #Sets julia configuration

@@ -35,9 +35,11 @@ alias tat="tmux attach -t"
 alias tns="tmux new -s"
 alias tl=' tmux ls'
 alias vm='set -o vi'
+
+# julia aliases
 alias j='julia'
 alias jp='julia --project'
-alias jpt='julia --project -t auto'
+alias jsc='julia --project --startup-file=no'
 alias pluto='julia --project -e "using Pluto; Pluto.run()"'
 
 # modern linux 

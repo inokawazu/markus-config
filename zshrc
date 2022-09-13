@@ -53,4 +53,4 @@ mpv --version >/dev/null 2>&1 && alias mpa="mpv --no-video"
 nvim --version >/dev/null 2>&1 && alias vim="nvim"
 
 # julia settings
-export JULIA_NUM_THREADS=auto
+export JULIA_NUM_THREADS=4

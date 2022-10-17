@@ -47,6 +47,9 @@ lsd --version >/dev/null 2>&1 && alias ls="lsd"
 rg --version >/dev/null 2>&1 && alias grep="rg"
 bat --version >/dev/null 2>&1 && alias cat="bat"
 
+# custom commands
+alias getip='echo $( curl -s "https://api.myip.com" )'
+
 # media playback
 mpv --version >/dev/null 2>&1 && alias mpa="mpv --no-video"
 

@@ -40,7 +40,7 @@ alias vm="set -o vi"
 alias j="julia"
 alias jp="julia --project"
 alias jsc="julia --project --startup-file=no"
-alias pluto='julia --project -e "using Pluto; Pluto.run()"'
+alias pluto='julia --startup-file=no --project -e "using Pluto; Pluto.run()"'
 
 # modern linux 
 lsd --version >/dev/null 2>&1 && alias ls="lsd"

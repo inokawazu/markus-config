@@ -24,7 +24,8 @@ antigen apply
 export EDITOR=$(which nvim)
 
 # append .local/bin to the path
-export PATH="$HOME"/.local/bin:$PATH
+PATH="$HOME"/.local/bin:$PATH
+export PATH="$HOME"/Scripts:$PATH
 
 # custom aliases 
 alias open="xdg-open"

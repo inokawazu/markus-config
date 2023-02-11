@@ -20,6 +20,9 @@ antigen theme frontcube
 # apply config
 antigen apply
 
+# open editor with Alt-e edit command line in editor
+bindkey '^[e' edit-command-line
+
 # make vim the defaul editor
 export EDITOR=$(which nvim)
 

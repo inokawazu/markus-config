@@ -51,7 +51,7 @@ done
 #MAIN
 
 # Makes the vim plug dir if it does not exist.
-mkdir -p ~/.vim/plugged
+mkdir -p $HOME/.vim/plugged
 
 #vim
 saveconfigfile vimrc $HOME/.vimrc

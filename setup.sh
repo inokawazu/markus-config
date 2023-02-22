@@ -42,9 +42,20 @@ setupjulia(){
     fi
 }
 
-while getopts "jh" option; do
+setupnvim(){
+    #nvim
+    mkdir -p ~/.config/nvim/
+    saveconfigfile init.vim $HOME/.config/nvim/init.vim
+    sh -c 'curl -sfLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+           https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    python3 --version 2>&1 >/dev/null && python3 -m pip install --user --upgrade pynvim
+    echo "Installed nvim stuff"
+}
+
+while getopts "jhn" option; do
    case $option in
       j) setupjulia;;
+      n) setupnvim;;
       h) echo $HELP_STRING
           exit;;
       \?) echo $HELP_STRING
@@ -60,15 +71,6 @@ mkdir -p $HOME/.vim/plugged
 #vim
 saveconfigfile vimrc $HOME/.vimrc
 echo "INSTALLED: vimrc"
-
-#nvim
-mkdir -p ~/.config/nvim/
-saveconfigfile init.vim $HOME/.config/nvim/init.vim
-sh -c 'curl -sfLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-python3 --version 2>&1 >/dev/null && python3 -m pip install --user --upgrade pynvim
-echo "Installed nvim stuff"
-
 
 #checks if zsh is install
 zsh --version 2>&1 >/dev/null

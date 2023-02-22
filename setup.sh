@@ -1,4 +1,8 @@
 #!/bin/env bash
+
+#strict mode
+set -euo pipefail
+
 #variables
 REALNAME='Markus-Amano'
 CONTACTEMAIL="markus.a.amano@gmail.com"

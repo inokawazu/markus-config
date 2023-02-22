@@ -10,6 +10,7 @@ antigen bundle git
 antigen bundle pip
 antigen bundle command-not-found
 antigen bundle common-aliases
+antigen bundle qrcode
 
 # external plugins
 antigen bundle MichaelAquilina/zsh-you-should-use

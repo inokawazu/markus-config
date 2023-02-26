@@ -1,4 +1,4 @@
-pkgs = ["OhMyREPL", "Revise", "Pluto", "JET", "CodeTracking"]
+pkgs = ["OhMyREPL", "Revise", "CodeTracking", "PkgTemplates"]
 
 using Pkg
 Pkg.add(pkgs)

@@ -1,4 +1,4 @@
 pkgs = ["OhMyREPL", "Revise", "CodeTracking", "PkgTemplates"]
 
-using Pkg
+import Pkg
 Pkg.add(pkgs)

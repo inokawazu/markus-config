@@ -31,7 +31,7 @@ options:
 
 #Sets julia configuration
 setupjulia(){
-    julia --version 2>&1 >/dev/null
+    which julia 2>&1 >/dev/null
     JULIA_IS_AVAILABLE=$?
     if [ $JULIA_IS_AVAILABLE -eq 0 ]; then
         # cp installjuliapkgs.jl /tmp
@@ -48,7 +48,7 @@ setupnvim(){
     saveconfigfile init.vim $HOME/.config/nvim/init.vim
     sh -c 'curl -sfLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-    python3 --version 2>&1 >/dev/null && python3 -m pip install --user --upgrade pynvim
+    which python3 2>&1 >/dev/null && python3 -m pip install --user --upgrade pynvim
     echo "Installed nvim stuff"
 }
 
@@ -73,7 +73,7 @@ saveconfigfile vimrc $HOME/.vimrc
 echo "INSTALLED: vimrc"
 
 #checks if zsh is install
-zsh --version 2>&1 >/dev/null
+which zsh 2>&1 >/dev/null
 ZSH_IS_AVAILABLE=$?
 if [ $ZSH_IS_AVAILABLE -ne 1 ]; then
     #Downloads antigen to download all the cool zsh plugins.
@@ -88,7 +88,7 @@ else
 fi
 
 #Sets git configuration
-git --version 2>&1 >/dev/null
+which git 2>&1 >/dev/null
 GIT_IS_AVAILABLE=$?
 if [ $GIT_IS_AVAILABLE -eq 0 ]; then
     git config --global user.name $REALNAME

@@ -55,6 +55,9 @@ lsd --version >/dev/null 2>&1 && alias ls="lsd"
 rg --version >/dev/null 2>&1 && alias grep="rg"
 bat --version >/dev/null 2>&1 && alias cat="bat"
 
+# file with -S
+which file >/dev/null 2>&1 && alias file="file -S"
+
 # custom commands
 alias getip='echo $( curl -s "https://api.myip.com" )'
 

@@ -20,7 +20,7 @@ antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen bundle zsh-users/zsh-syntax-highlighting # must be last plugin to get effect
 
 # theme
-antigen theme fwalch
+antigen theme gianu
 
 antigen apply
 

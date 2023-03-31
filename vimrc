@@ -73,6 +73,10 @@ Plug 'mazleo/vim-astro'
 " Powerline Clone
 Plug 'itchyny/lightline.vim'
 
+" Directory navigation
+Plug 'preservim/nerdtree'
+nnoremap <C-t> :NERDTreeToggle<CR>
+
 " Prompt for a command to run
 Plug 'jgdavey/tslime.vim'
 let g:tslime_always_current_session = 1

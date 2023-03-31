@@ -87,6 +87,13 @@ Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'honza/vim-snippets'
 
+" Dir navigation
+Plug 'preservim/nerdtree'
+" nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
+
 call plug#end()
 
 autocmd FileType mma setlocal commentstring=(*\ %s\ *) 

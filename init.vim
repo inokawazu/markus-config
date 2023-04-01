@@ -74,7 +74,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'ray-x/cmp-treesitter'
 
 Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
+" Plug 'williamboman/nvim-lsp-installer'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -102,35 +102,9 @@ let g:sonokai_style = 'maia'
 colorscheme gruvbox-material
 
 lua <<EOF
-    -- Use an on_attach function to only map the following keys
-    -- after the language server attaches to the current buffer
-    local on_attach = function(client, bufnr)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-    -- Mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', '<leader>K', vim.lsp.buf.hover, bufopts)
-    vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-    vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-    vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-    vim.keymap.set('n', '<leader>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, bufopts)
-    vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-    vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, bufopts)
-    end
-    local lsp_flags = {
-      -- This is the default in Nvim 0.7+
-      debounce_text_changes = 150,
-      }
+    -- local lsp_flags = { -- This is the default in Nvim 0.7+
+    --   debounce_text_changes = 150, }
 
   -- Setup nvim-cmp.
   local cmp = require'cmp'
@@ -202,10 +176,39 @@ lua <<EOF
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-  local lsp_installer = require("nvim-lsp-installer")
-  lsp_installer.on_server_ready(
-    function(server)
-    local opts = {on_attach = on_attach}
-    server:setup(opts)
-    end)
+  local lspconfig = require('lspconfig')
+  lspconfig.pyright.setup {}
+  lspconfig.julials.setup {}
+
+  -- Use LspAttach autocommand to only map the following keys
+  -- after the language server attaches to the current buffer
+  vim.api.nvim_create_autocmd('LspAttach', {
+    group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+    callback = function(ev)
+    -- Enable completion triggered by <c-x><c-o>
+    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+    -- Buffer local mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local opts = { buffer = ev.buf }
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
+    vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
+    vim.keymap.set('n', '<leader>wl', function()
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, opts)
+    vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', '<leader>f', function()
+    vim.lsp.buf.format { async = true }
+    end, opts)
+    end,
+  })
+
 EOF

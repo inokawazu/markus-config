@@ -179,6 +179,7 @@ lua <<EOF
   local lspconfig = require('lspconfig')
   lspconfig.pyright.setup {}
   lspconfig.julials.setup {}
+  lspconfig.texlab.setup {}
 
   -- Use LspAttach autocommand to only map the following keys
   -- after the language server attaches to the current buffer

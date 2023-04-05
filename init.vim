@@ -87,6 +87,8 @@ Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'honza/vim-snippets'
 
+Plug 'github/copilot.vim'
+
 " Dir navigation
 Plug 'preservim/nerdtree'
 " nnoremap <leader>n :NERDTreeFocus<CR>

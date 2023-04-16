@@ -13,14 +13,13 @@ set scrolloff=10
 set mmp=10000 " more memory for pattern matching!
 
 setlocal expandtab       " Replace tabs with spaces.
-autocmd BufRead,BufNewFile *.jl set textwidth=92    " Limit lines according to Julia's CONTRIBUTING guidelines.
 
-" Begin Julia Styling
-set colorcolumn=93 " none shall pass 93
-set tabstop=4       " Set tabstops to a width of four columns.
-set softtabstop=4   " Determine the behaviour of TAB and BACKSPACE keys with expandtab.
-set shiftwidth=4    " Determine the results of >>, <<, and ==.
-" End Julia Styling
+autocmd BufRead,BufNewFile *.jl set textwidth=92    " Limit lines according to Julia's CONTRIBUTING guidelines.
+" Julia Styling
+autocmd BufRead,BufNewFile *.jl set colorcolumn=93 " none shall pass 93
+autocmd BufRead,BufNewFile *.jl set tabstop=4       " Set tabstops to a width of four columns.
+autocmd BufRead,BufNewFile *.jl set softtabstop=4   " Determine the behaviour of TAB and BACKSPACE keys with expandtab.
+autocmd BufRead,BufNewFile *.jl set shiftwidth=4    " Determine the results of >>, <<, and ==.
 
 " This turns on line numbering.
 set relativenumber
@@ -37,26 +36,13 @@ set spelllang=en_us
 set nobackup
 set nowritebackup
 
-" Install vim-plug if not found
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -sfLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-endif
-
 " Run PlugInstall if there are missing plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 
-" Begin Vim plugins
+" Plugins
 call plug#begin('~/.vim/plugged')
-
-" Wolfram Support
-Plug 'rsmenon/vim-mathematica'
-
-" Julia support for vim.
-Plug 'JuliaEditorSupport/julia-vim'
-Plug 'kdheepak/JuliaFormatter.vim'
 
 Plug 'tpope/vim-commentary'
 
@@ -64,18 +50,18 @@ Plug 'sheerun/vim-polyglot'
 Plug 'lluchs/vim-wren'
 Plug 'ollykel/v-vim'
 Plug 'lervag/vimtex'
+Plug 'rsmenon/vim-mathematica'
+" Julia support for vim.
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'kdheepak/JuliaFormatter.vim'
 
 " Coloschemes
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
-Plug 'mazleo/vim-astro'
+Plug 'nanotech/jellybeans.vim'
 
 " Powerline Clone
 Plug 'itchyny/lightline.vim'
-
-" Directory navigation
-Plug 'preservim/nerdtree'
-nnoremap <C-t> :NERDTreeToggle<CR>
 
 " Prompt for a command to run
 Plug 'jgdavey/tslime.vim'
@@ -84,39 +70,37 @@ let g:tslime_always_current_window = 1
 vnoremap <leader><leader> <Plug>SendSelectionToTmux
 nnoremap <leader><leader> <Plug>NormalModeSendToTmux
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'ray-x/cmp-treesitter'
 
-" Plug 'dense-analysis/ale' " Linting support for various languages
-Plug 'prabirshrestha/vim-lsp'
-Plug 'machakann/vim-lsp-julia'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'mattn/vim-lsp-settings'
-let g:asyncomplete_auto_popup = 1
-let g:lsp_virtual_text_enabled = 0
-let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_diagnostics_enabled = 1
-let g:lsp_signs_enabled = 1
+Plug 'neovim/nvim-lspconfig'
+" Plug 'williamboman/nvim-lsp-installer'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+set completeopt=menu,menuone,noselect
+
+" For ultisnips users.
+Plug 'SirVer/ultisnips'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'honza/vim-snippets'
+
+Plug 'github/copilot.vim'
+
+" Dir navigation
+Plug 'preservim/nerdtree'
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+" nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
 
 call plug#end()
 
-" Settings for lightline
-set noshowmode
-set laststatus=2
+autocmd FileType mma setlocal commentstring=(*\ %s\ *) 
 
-" Block movement for Julia
-runtime macros/matchit.vim
-
-" colorscheme settings
-if has('termguicolors')
-  set termguicolors
-endif
-
-" ale completion
-" let g:ale_completion_enabled = 1
-" set omnifunc=ale#completion#OmniFunc
-" let g:ale_completion_max_suggestions = 20
-
-let g:sonokai_style = 'maia'
-let g:sonokai_enable_italic = 1
-let g:sonokai_disable_italic_comment = 1
+let g:sonokai_style = 'espresso'
 colorscheme sonokai

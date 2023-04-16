@@ -45,7 +45,7 @@ setupjulia(){
 setupnvim(){
     #nvim
     mkdir -p ~/.config/nvim/
-    saveconfigfile init.vim $HOME/.config/nvim/init.vim
+    saveconfigfile init.lua $HOME/.config/nvim/init.lua
     sh -c 'curl -sfLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     which python3 2>&1 >/dev/null && python3 -m pip install --user --upgrade pynvim
@@ -54,8 +54,10 @@ setupnvim(){
 
 while getopts "jhn" option; do
    case $option in
-      j) setupjulia;;
-      n) setupnvim;;
+      j) setupjulia
+          exit;;
+      n) setupnvim
+          exit;;
       h) echo $HELP_STRING
           exit;;
       \?) echo $HELP_STRING

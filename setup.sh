@@ -1,7 +1,7 @@
 #!/bin/env bash
 
 #strict mode
-set -euo pipefail
+# set -euo pipefail
 
 #variables
 REALNAME='Markus-Amano'

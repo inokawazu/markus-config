@@ -93,10 +93,10 @@ Plug 'github/copilot.vim'
 Plug 'preservim/nerdtree'
 imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
-" nnoremap <leader>n :NERDTreeFocus<CR>
-" nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-" nnoremap <C-f> :NERDTreeFind<CR>
+
+" Make binding
+noremap <Leader>m :!make<CR>
 
 call plug#end()
 

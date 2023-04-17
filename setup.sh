@@ -10,6 +10,16 @@ GITHUBUSERNAME="inokawazu"
 REPONAME="markus-config"
 SCRIPT_DIR=$(dirname -- $(readlink -fn -- "$0"))
 
+EDITOR="vi"
+if [[ -x nvim ]]
+then 
+    EDITOR="nvim"
+elif [[ -x vim ]]
+then
+    EDITOR="vim"
+fi
+
+
 #Functions
 #Notifyset function prints what was set to what. 
 notifyset () {
@@ -97,7 +107,7 @@ if [ $GIT_IS_AVAILABLE -eq 0 ]; then
     notifyset "Git name" $REALNAME
     git config --global user.email $CONTACTEMAIL
     notifyset "Git email" $CONTACTEMAIL
-    git config --global core.editor nvim
+    git config --global core.editor $EDITOR
     notifyset "Git editor" "nvim"
     git config --global github.user $GITHUBUSERNAME
     notifyset "Github username" $GITHUBUSERNAME

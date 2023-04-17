@@ -34,20 +34,29 @@ export EDITOR=$(which nvim)
 PATH="$HOME"/.local/bin:$PATH
 export PATH="$HOME"/Scripts:$PATH
 
-# custom aliases 
+# open = xdg
 alias open="xdg-open"
+
 alias youtube-mp3="youtube-dl --extract-audio --audio-format mp3"
+
+# wolframscript so one can run wsf file.wl
 alias wsf="wolframscript -f"
+
+# grep through all aliases
 alias alig="alias | grep"
+
+# tmux aliases
 alias tat="tmux attach -t"
 alias tns="tmux new -s"
 alias tl="tmux ls"
+
+# zsh vim bindings
 alias vm="set -o vi"
 
 # julia aliases
 alias j="julia"
 alias jp="julia --project"
-alias jsc="julia --project --startup-file=no"
+alias jsc="julia --startup-file=no" # short for "julia script"
 alias pluto='JULIA_NUM_THREADS=auto julia --startup-file=no --project -e "using Pluto; Pluto.run()"'
 
 # modern linux 

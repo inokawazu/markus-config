@@ -56,6 +56,7 @@ alias vm="set -o vi"
 # julia aliases
 alias j="julia"
 alias jp="julia --project"
+alias jtest="julia --project -e 'using Pkg; Pkg.test()'"
 alias jsc="julia --startup-file=no" # short for "julia script"
 alias pluto='JULIA_NUM_THREADS=auto julia --startup-file=no --project -e "using Pluto; Pluto.run()"'
 

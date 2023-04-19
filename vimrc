@@ -96,7 +96,7 @@ let g:copilot_no_tab_map = v:true
 nnoremap <C-t> :NERDTreeToggle<CR>
 
 " Make binding
-noremap <Leader>m :!make<CR>
+noremap <leader>m :w<CR>:!make<CR>
 
 call plug#end()
 

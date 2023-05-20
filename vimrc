@@ -46,6 +46,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-commentary'
 
+" Lang support
 Plug 'sheerun/vim-polyglot'
 Plug 'lluchs/vim-wren'
 Plug 'ollykel/v-vim'

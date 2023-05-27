@@ -60,6 +60,9 @@ alias jtest="julia --project -e 'using Pkg; Pkg.test()'"
 alias jsc="julia --startup-file=no" # short for "julia script"
 alias pluto='JULIA_NUM_THREADS=auto julia --startup-file=no --project -e "using Pluto; Pluto.run()"'
 
+# language aliases
+alias jlookup='python -m jamdict lookup'
+
 # modern linux 
 lsd --version >/dev/null 2>&1 && alias ls="lsd"
 rg --version >/dev/null 2>&1 && alias grep="rg"

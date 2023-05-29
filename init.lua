@@ -1,6 +1,16 @@
 -- vim config
 vim.cmd('source ~/.vimrc')
 
+-- automatic lsp
+require("mason").setup {}
+require("mason-lspconfig").setup { automatic_installation = true }
+
+require("mason-lspconfig").setup_handlers {
+  function (server_name) -- default handler (optional)
+    require("lspconfig")[server_name].setup {}
+  end
+}
+
 -- Setup nvim-cmp.
 local cmp = require'cmp'
 local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings") -- for ultisnips remappings
@@ -70,11 +80,11 @@ cmp.setup.cmdline(':', {
 
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-local lspconfig = require('lspconfig')
-lspconfig.pyright.setup {}
-lspconfig.julials.setup {}
-lspconfig.texlab.setup {}
+-- local lspconfig = require('lspconfig')
+-- lspconfig.pyright.setup {}
+-- lspconfig.julials.setup {}
+-- lspconfig.texlab.setup {}
+-- lspconfig.setup {}
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer

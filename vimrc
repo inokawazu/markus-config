@@ -95,8 +95,6 @@ Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'honza/vim-snippets'
 
-Plug 'github/copilot.vim'
-
 " Dir navigation
 Plug 'preservim/nerdtree'
 imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")

@@ -1,93 +1,46 @@
 -- vim config
 vim.cmd('source ~/.vimrc')
 
--- automatic lsp
-require("mason").setup {}
-require("mason-lspconfig").setup { automatic_installation = true }
-
-require("mason-lspconfig").setup_handlers {
-  function (server_name) -- default handler (optional)
-    require("lspconfig")[server_name].setup {}
-  end
-}
-
--- Setup nvim-cmp.
 local cmp = require'cmp'
-local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings") -- for ultisnips remappings
 
+-- Global setup.
 cmp.setup({
-  snippet = {
-    -- REQUIRED - you must specify a snippet engine
-    expand = function(args)
-      -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-      -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-      vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-    end,
-  },
-  window = {
-    -- completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered(),
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = false}), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    ["<Tab>"] = cmp.mapping( -- ultisnips tab to go to next field mapping
-    function(fallback)
-      cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
-    end,
-    { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
-    ),
-    ["<S-Tab>"] = cmp.mapping(
-    function(fallback)
-      cmp_ultisnips_mappings.jump_backwards(fallback)
-    end,
-    { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
-    )
-  }),
-  sources = cmp.config.sources({
-    { name = 'treesitter' },
-    { name = 'nvim_lsp' },
-    -- { name = 'vsnip' }, -- For vsnip users.
-    -- { name = 'luasnip' }, -- For luasnip users.
-    { name = 'ultisnips' }, -- For ultisnips users.
-    -- { name = 'snippy' }, -- For snippy users.
-  }, {
-    { name = 'buffer' },
-  })
-})
+		window = {
+			completion = cmp.config.window.bordered(),
+			documentation = cmp.config.window.bordered(),
+		},
+		mapping = cmp.mapping.preset.insert({
+				['<C-d>'] = cmp.mapping.scroll_docs(-4),
+				['<C-f>'] = cmp.mapping.scroll_docs(4),
+				['<C-Space>'] = cmp.mapping.complete(),
+				['<CR>'] = cmp.mapping.confirm({ select = true }),
+			}),
+		sources = cmp.config.sources({
+				{ name = 'nvim_lsp' },
+				{ name = 'treesitter' },
+			}, {
+				{ name = 'buffer' },
+			})
+	})
 
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+-- `/` cmdline setup.
 cmp.setup.cmdline('/', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' }
-  }
-})
+		mapping = cmp.mapping.preset.cmdline(),
+		sources = {
+			{ name = 'buffer' }
+		}
+	})
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+-- `:` cmdline setup.
 cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
-})
+		mapping = cmp.mapping.preset.cmdline(),
+		sources = cmp.config.sources({
+				{ name = 'path' }
+			}, {
+				{ name = 'cmdline' }
+			})
+	})
 
--- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
--- local lspconfig = require('lspconfig')
--- lspconfig.pyright.setup {}
--- lspconfig.julials.setup {}
--- lspconfig.texlab.setup {}
--- lspconfig.setup {}
-
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
@@ -116,3 +69,25 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
+
+-- lspconfig.txt
+
+-- LanguageServer.jl can be installed with `julia` and `Pkg`:
+-- ```sh
+-- julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'
+-- ```
+-- where `~/.julia/environments/nvim-lspconfig` is the location where
+-- the default configuration expects LanguageServer.jl to be installed.
+
+-- To update an existing install, use the following command:
+-- ```sh
+-- julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.update()'
+-- ```
+
+-- Note: In order to have LanguageServer.jl pick up installed packages or dependencies in a
+-- Julia project, you must make sure that the project is instantiated:
+-- ```sh
+-- julia --project=/path/to/my/project -e 'using Pkg; Pkg.instantiate()'
+-- ```
+require'lspconfig'.julials.setup{}
+require'lspconfig'.pylsp.setup{}

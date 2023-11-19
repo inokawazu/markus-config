@@ -102,6 +102,9 @@ noremap <leader>m :w<CR>:!make<CR>
 " Sets mathematica strings
 autocmd FileType mma setlocal commentstring=(*\ %s\ *) 
 
+" Setting complete opts
+set completeopt=menu,menuone,noselect
+
 " colorscheme
 let g:sonokai_style = 'espresso'
 colorscheme sonokai

@@ -90,4 +90,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- julia --project=/path/to/my/project -e 'using Pkg; Pkg.instantiate()'
 -- ```
 require'lspconfig'.julials.setup{}
-require'lspconfig'.pylsp.setup{}
+require'lspconfig'.pylsp.setup{
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					ignore = {'W391'},
+					maxLineLength = 100
+				}
+			}
+		}
+	}
+}

@@ -33,11 +33,12 @@ set number
 
 " wildmenu is actually pretty neat!
 set wildmenu
+set wildmode=full
 
 " starts matchit
 runtime macros/matchit.vim
 
-set spelllang=en_us
+set spelllang=en_us,en-rare
 
 set nobackup
 set nowritebackup
@@ -50,6 +51,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 " Plugins
 call plug#begin('~/.vim/plugged')
 
+" Comments made easy
 Plug 'tpope/vim-commentary'
 
 " Lang support
@@ -84,10 +86,6 @@ nnoremap <leader><leader> <Plug>NormalModeSendToTmux
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'ray-x/cmp-treesitter'
 
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'williamboman/nvim-lsp-installer'
-Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -96,23 +94,23 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 set completeopt=menu,menuone,noselect
 
-" For ultisnips users.
-Plug 'SirVer/ultisnips'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-Plug 'honza/vim-snippets'
-
 " Dir navigation
 Plug 'preservim/nerdtree'
-imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
-let g:copilot_no_tab_map = v:true
 nnoremap <C-t> :NERDTreeToggle<CR>
-
-" Make binding
-noremap <leader>m :w<CR>:!make<CR>
 
 call plug#end()
 
+" Custom bindings
+"
+" Make binding
+noremap <leader>m :w<CR>:!make<CR>
+
+" Sets mathematica strings
 autocmd FileType mma setlocal commentstring=(*\ %s\ *) 
 
+" Setting complete opts
+set completeopt=menu,menuone,noselect
+
+" colorscheme
 let g:sonokai_style = 'espresso'
 colorscheme sonokai

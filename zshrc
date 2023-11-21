@@ -76,8 +76,12 @@ alias getip='echo $( curl -s "https://api.myip.com" )'
 
 # media playback
 mpv --version >/dev/null 2>&1 && alias mpa="mpv --no-video"
-
 nvim --version >/dev/null 2>&1 && alias vim="nvim"
+
+# use the kitty version of ssh
+if [[ $TERM == "xterm-kitty" ]]; then
+  alias ssh="kitten ssh"
+fi
 
 # julia settings
 export JULIA_NUM_THREADS=4

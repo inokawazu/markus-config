@@ -38,7 +38,7 @@ set wildmode=full
 " starts matchit
 runtime macros/matchit.vim
 
-set spelllang=en_us,en-rare
+set spelllang=en_us
 
 set nobackup
 set nowritebackup

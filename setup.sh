@@ -6,7 +6,7 @@ set -euo pipefail
 DISTRO=$(cat /etc/*-release | grep '^ID=' | cut -d'=' -f2)
 
 #variables
-REALNAME='Markus-Amano'
+REALNAME='Markus Amano'
 CONTACTEMAIL="markus.a.amano@gmail.com"
 GITHUBUSERNAME="inokawazu"
 REPONAME="markus-config"
@@ -121,8 +121,8 @@ fi
 which git 2>&1 >/dev/null
 GIT_IS_AVAILABLE=$?
 if [ $GIT_IS_AVAILABLE -eq 0 ]; then
-    git config --global user.name $REALNAME
-    notifyset "Git name" $REALNAME
+    git config --global user.name "$REALNAME"
+    notifyset "Git name" "$REALNAME"
     git config --global user.email $CONTACTEMAIL
     notifyset "Git email" $CONTACTEMAIL
     git config --global core.editor $EDITOR

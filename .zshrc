@@ -29,10 +29,11 @@ antigen apply
 # open editor with Alt-e edit command line in editor
 bindkey '^[e' edit-command-line
 
-# make vim the defaul editor
-EDITOR="vi"
+# make vim the default editor
+EDITOR="vim"
 if [[ -x nvim ]]
 then 
+  echo "I AM NVIM"
   EDITOR="nvim"
 elif [[ -x vim ]]
 then

@@ -79,7 +79,7 @@ mpv --version >/dev/null 2>&1 && alias mpa="mpv --no-video"
 nvim --version >/dev/null 2>&1 && alias vim="nvim"
 
 # use the kitty version of ssh
-if [[ $TERM == "xterm-kitty" ]]; then
+if [[ -n $KITTY_WINDOW_ID ]]; then
   alias ssh="kitten ssh"
 fi
 

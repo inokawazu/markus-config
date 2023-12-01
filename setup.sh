@@ -84,12 +84,10 @@ setupnvim(){
 while getopts "jhn" option; do
    case $option in
       j) setupjulia
-          exit;;
+          ;;
       n) setupnvim
-          exit;;
-      h) echo $HELP_STRING
-          exit;;
-      \?) echo $HELP_STRING
+          ;;
+      h | \?) echo $HELP_STRING
           exit;;
    esac
 done

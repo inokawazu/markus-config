@@ -24,15 +24,24 @@ antigen theme gianu
 
 antigen apply
 
+# END antigen
+
 # open editor with Alt-e edit command line in editor
 bindkey '^[e' edit-command-line
 
 # make vim the defaul editor
-export EDITOR=$(which nvim)
+EDITOR="vi"
+if [[ -x nvim ]]
+then 
+  EDITOR="nvim"
+elif [[ -x vim ]]
+then
+  EDITOR="vim"
+fi
 
 # append .local/bin to the path
-PATH="$HOME"/.local/bin:$PATH
-export PATH="$HOME"/Scripts:$PATH
+PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/Scripts:$PATH
 
 # open = xdg
 alias open="xdg-open"
@@ -85,3 +94,5 @@ fi
 
 # julia settings
 export JULIA_NUM_THREADS=4
+PATH=$HOME/.juliaup/bin:$PATH
+export PATH

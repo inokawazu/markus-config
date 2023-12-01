@@ -1,7 +1,9 @@
 #!/bin/env bash
 
 #strict mode
-# set -euo pipefail
+set -euo pipefail
+
+DISTRO=$(cat /etc/*-release | grep '^ID=' | cut -d'=' -f2)
 
 #variables
 REALNAME='Markus-Amano'
@@ -19,7 +21,6 @@ then
     EDITOR="vim"
 fi
 
-
 #Functions
 #Notifyset function prints what was set to what. 
 notifyset () {
@@ -27,7 +28,11 @@ notifyset () {
 }
 
 saveconfigfile () {
-    ln -sf $SCRIPT_DIR/$1 $2
+    cp $SCRIPT_DIR/$1 $2
+}
+
+saveconfigdir () {
+    cp -r $SCRIPT_DIR/$1 $2
 }
 
 
@@ -45,20 +50,36 @@ setupjulia(){
     JULIA_IS_AVAILABLE=$?
     if [ $JULIA_IS_AVAILABLE -eq 0 ]; then
         # cp installjuliapkgs.jl /tmp
-        julia --startup-file=no $SCRIPT_DIR/installjuliapkgs.jl
+        julia --startup-file=no $SCRIPT_DIR/julia/installjuliapkgs.jl
         mkdir -p $HOME/.julia/config
-        saveconfigfile startup.jl $HOME/.julia/config/startup.jl
+        saveconfigfile julia/startup.jl $HOME/.julia/config/startup.jl
+        julia --project=$HOME/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'
         echo "INSTALLED: julia packages"
     fi
 }
 
 setupnvim(){
-    #nvim
-    mkdir -p ~/.config/nvim/
-    saveconfigfile init.lua $HOME/.config/nvim/init.lua
+    # nvim
+    mkdir -p $HOME/.config/nvim
+    saveconfigdir nvim $HOME/.config
     sh -c 'curl -sfLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-    which python3 2>&1 >/dev/null && python3 -m pip install --user --upgrade pynvim
+    # which python3 2>&1 >/dev/null && python3 -m pip install --user --upgrade pynvim
+    case $DISTRO in
+        "ubuntu" | "debian")
+            sudo apt update && sudo apt install neovim python3-neovim -y
+            ;;
+        "fedora")
+            sudo dnf install neovim python3-neovim -y
+            ;;
+        "arch" | "manjaro" )
+            sudo pacman -Syu neovim python-neovim
+            ;;
+        *)
+            echo "Unsupported distribution: $DISTRO"
+            ;;
+    esac
+
     echo "Installed nvim stuff"
 }
 
@@ -81,7 +102,7 @@ done
 mkdir -p $HOME/.vim/plugged
 
 #vim
-saveconfigfile vimrc $HOME/.vimrc
+saveconfigfile .vimrc $HOME/.vimrc
 echo "INSTALLED: vimrc"
 
 #checks if zsh is install
@@ -93,7 +114,7 @@ if [ $ZSH_IS_AVAILABLE -ne 1 ]; then
     if [ -f "~/.zshrc" ]; then
         rm "~/.zshrc"
     fi
-    saveconfigfile zshrc $HOME/.zshrc
+    saveconfigfile .zshrc $HOME/.zshrc
     echo "INSTALLED: .zshrc"
 else
     echo "zsh is not installed on this machine (please install or contact your system admin)."
@@ -114,4 +135,4 @@ if [ $GIT_IS_AVAILABLE -eq 0 ]; then
 fi
 
 #Add tmux config file
-saveconfigfile tmux.conf $HOME/.tmux.conf
+saveconfigfile .tmux.conf $HOME/.tmux.conf

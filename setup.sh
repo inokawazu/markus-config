@@ -64,22 +64,20 @@ setupnvim(){
     saveconfigdir nvim $HOME/.config
     sh -c 'curl -sfLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-    # which python3 2>&1 >/dev/null && python3 -m pip install --user --upgrade pynvim
     case $DISTRO in
         "ubuntu" | "debian")
-            sudo apt update && sudo apt install neovim python3-neovim -y
+            sudo apt update && sudo apt install python3-neovim -y
             ;;
         "fedora")
-            sudo dnf install neovim python3-neovim -y
+            sudo dnf install python3-neovim -y
             ;;
         "arch" | "manjaro" )
-            sudo pacman -Syu neovim python-neovim
+            sudo pacman -Syu python-neovim
             ;;
         *)
-            echo "Unsupported distribution: $DISTRO"
+            echo "Unsupported distribution for python-neovim installation: $DISTRO"
             ;;
     esac
-
     echo "Installed nvim stuff"
 }
 

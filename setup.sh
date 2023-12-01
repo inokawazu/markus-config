@@ -59,9 +59,6 @@ setupjulia(){
 }
 
 setupnvim(){
-    # nvim
-    mkdir -p $HOME/.config/nvim
-    saveconfigdir nvim $HOME/.config
     sh -c 'curl -sfLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     case $DISTRO in
@@ -78,7 +75,7 @@ setupnvim(){
             echo "Unsupported distribution for python-neovim installation: $DISTRO"
             ;;
     esac
-    echo "Installed nvim stuff"
+    echo "Installed nvim python stuff"
 }
 
 while getopts "jhn" option; do
@@ -93,6 +90,10 @@ while getopts "jhn" option; do
 done
 
 #MAIN
+
+# nvim
+mkdir -p $HOME/.config/nvim
+saveconfigdir nvim $HOME/.config
 
 # Makes the vim plug dir if it does not exist.
 mkdir -p $HOME/.vim/plugged

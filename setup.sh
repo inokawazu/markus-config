@@ -12,7 +12,7 @@ GITHUBUSERNAME="inokawazu"
 REPONAME="markus-config"
 SCRIPT_DIR=$(dirname -- $(readlink -fn -- "$0"))
 
-EDITOR="vi"
+EDITOR="nvim"
 if [[ -x nvim ]]
 then 
     EDITOR="nvim"

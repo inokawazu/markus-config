@@ -86,25 +86,20 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- lspconfig.txt
+require'sniprun'.setup({
+		display = {
+			"Terminal",
+			-- "VirtualTextOk",
+		},
+		live_display = { "VirtualTextOk" }, --# display mode used in live_mode
+		repl_enable = {'Mathematica_original', 'Julia_original'},
+		interpreter_options = {
+			Mathematica_original = {
+				use_javagraphics_if_contains = {'Plot'}, -- a pattern that need <<JavaGraphics
+			},
+		},
+	})
 
--- LanguageServer.jl can be installed with `julia` and `Pkg`:
--- ```sh
--- julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'
--- ```
--- where `~/.julia/environments/nvim-lspconfig` is the location where
--- the default configuration expects LanguageServer.jl to be installed.
-
--- To update an existing install, use the following command:
--- ```sh
--- julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.update()'
--- ```
-
--- Note: In order to have LanguageServer.jl pick up installed packages or dependencies in a
--- Julia project, you must make sure that the project is instantiated:
--- ```sh
--- julia --project=/path/to/my/project -e 'using Pkg; Pkg.instantiate()'
--- ```
 require'lspconfig'.julials.setup{}
 require'lspconfig'.pylsp.setup{
 	settings = {

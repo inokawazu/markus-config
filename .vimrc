@@ -79,12 +79,16 @@ Plug 'nanotech/jellybeans.vim'
 " Powerline Clone
 Plug 'itchyny/lightline.vim'
 
-" Prompt for a command to run
-Plug 'jgdavey/tslime.vim'
-let g:tslime_always_current_session = 1
-let g:tslime_always_current_window = 1
-vnoremap <leader><leader> <Plug>SendSelectionToTmux
-nnoremap <leader><leader> <Plug>NormalModeSendToTmux
+" Plug 'jgdavey/tslime.vim'
+" let g:tslime_always_current_session = 1
+" let g:tslime_always_current_window = 1
+" vnoremap <leader><leader> <Plug>SendSelectionToTmux
+" nnoremap <leader><leader> <Plug>NormalModeSendToTmux
+
+" trying sniprun
+Plug 'michaelb/sniprun', {'do': 'sh install.sh'}
+vnoremap <leader><leader> <Plug>SnipRun
+nnoremap <leader><leader> <Plug>SnipRun
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'ray-x/cmp-treesitter'

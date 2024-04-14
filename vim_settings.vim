@@ -18,7 +18,7 @@ set incsearch
 set scrolloff=10
 set mmp=10000 " more memory for pattern matching!
 
-setlocal expandtab       " Replace tabs with spaces.
+set expandtab       " Replace tabs with spaces.
 
 autocmd BufRead,BufNewFile *.jl set textwidth=92    " Limit lines according to Julia's CONTRIBUTING guidelines.
 " Julia Styling
@@ -86,19 +86,6 @@ vnoremap <leader><leader> <Plug>SendSelectionToTmux
 nnoremap <leader><leader> <Plug>NormalModeSendToTmux
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'ray-x/cmp-treesitter'
-
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'rafamadriz/friendly-snippets'
 
 set completeopt=menu,menuone,noselect
 

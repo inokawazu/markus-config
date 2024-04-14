@@ -51,9 +51,6 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 " Plugins
 call plug#begin('~/.vim/plugged')
 
-" Async vim
-Plug 'skywind3000/asyncrun.vim'
-
 " Comments made easy
 Plug 'tpope/vim-commentary'
 

@@ -96,19 +96,3 @@ install_source_file startup.jl ~/.julia/config/startup.jl 'include("%s")'
 #          exit;;
 #   esac
 #done
-
-##MAIN
-
-##Sets git configuration
-#which git 2>&1 >/dev/null
-#GIT_IS_AVAILABLE=$?
-#if [ $GIT_IS_AVAILABLE -eq 0 ]; then
-#    git config --global user.name "$REALNAME"
-#    notifyset "Git name" "$REALNAME"
-#    git config --global user.email $CONTACTEMAIL
-#    notifyset "Git email" $CONTACTEMAIL
-#    git config --global core.editor $EDITOR
-#    notifyset "Git editor" "nvim"
-#    git config --global github.user $GITHUBUSERNAME
-#    notifyset "Github username" $GITHUBUSERNAME
-#fi

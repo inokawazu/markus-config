@@ -30,6 +30,11 @@ install_zsh_source_file() {
 if read -q "reply?Would you like to set up zsh files? (y/n): "
 then
     echo
+    if read -q "reply?Would you like to set up antigen? (y/n): "
+        curl -sfL git.io/antigen > ~/.antigen.zsh
+    end
+
+    echo
     for zsh_file in antigen.zsh aliases.zsh env_variables.zsh key_bindings.zsh
     do
         install_zsh_source_file $zsh_file ~/.zshrc
@@ -38,24 +43,14 @@ fi
 echo
 echo
 
-
-##checks if zsh is install
-#which zsh 2>&1 >/dev/null
-#ZSH_IS_AVAILABLE=$?
-#if [ $ZSH_IS_AVAILABLE -ne 1 ]; then
-#    #Downloads antigen to download all the cool zsh plugins.
-#    curl -sfL git.io/antigen > ~/.antigen.zsh
-#    if [ -f "~/.zshrc" ]; then
-#        rm "~/.zshrc"
-#    fi
-#    saveconfigfile .zshrc $HOME/.zshrc
-#    echo "INSTALLED: .zshrc"
-#else
-#    echo "zsh is not installed on this machine (please install or contact your system admin)."
-#fi
-
 # sourcing vim
 install_source_file vim_settings.vim ~/.vimrc "source %s"
+
+#Add tmux config file
+install_source_file tmux.conf ~/.tmux.conf "source %s"
+
+# julia 
+install_source_file startup.jl ~/.julia/config/startup.jl 'include("%s")'
 
 #setupnvim(){
 #    sh -c 'curl -sfLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -76,12 +71,6 @@ install_source_file vim_settings.vim ~/.vimrc "source %s"
 #    esac
 #    echo "Installed nvim python stuff"
 #}
-
-#Add tmux config file
-install_source_file tmux.conf ~/.tmux.conf "source %s"
-
-# julia 
-install_source_file startup.jl ~/.julia/config/startup.jl 'include("%s")'
 
 ##Sets julia configuration
 #setupjulia(){

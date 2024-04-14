@@ -20,6 +20,7 @@ set mmp=10000 " more memory for pattern matching!
 
 set expandtab       " Replace tabs with spaces.
 
+" Julia Stuff
 autocmd BufRead,BufNewFile *.jl set textwidth=92    " Limit lines according to Julia's CONTRIBUTING guidelines.
 " Julia Styling
 autocmd BufRead,BufNewFile *.jl set colorcolumn=93 " none shall pass 93

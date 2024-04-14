@@ -84,7 +84,8 @@ nnoremap <leader><leader> <Plug>NormalModeSendToTmux
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-set completeopt=menu,menuone,noselect
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 
 call plug#end()
 
@@ -97,6 +98,29 @@ autocmd FileType mma setlocal commentstring=(*\ %s\ *)
 
 " Setting complete opts
 set completeopt=menu,menuone,noselect
+set omnifunc=lsp#complete
+
+let g:lsp_inlay_hints_enabled = 1
+
+set signcolumn=yes
+nnoremap <buffer> gI <plug>(lsp-status)
+nmap <buffer> gd <plug>(lsp-definition)
+nmap <buffer> gs <plug>(lsp-document-symbol-search)
+nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+nmap <buffer> gr <plug>(lsp-references)
+nnoremap <buffer> g]r <plug>(lsp-next-reference)
+nnoremap <buffer> g]r <plug>(lsp-previous-reference)
+nmap <buffer> gi <plug>(lsp-implementation)
+nmap <buffer> gt <plug>(lsp-type-definition)
+nmap <buffer> <leader>rn <plug>(lsp-rename)
+nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+nmap <buffer> K <plug>(lsp-hover)
+nnoremap <buffer> ga <plug>(lsp-code-action)
+nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+
+let g:lsp_format_sync_timeout = 1000
 
 " colorscheme
 let g:sonokai_style = 'espresso'

@@ -1,9 +1,7 @@
 is_command() { type $1 &> /dev/null }
 
-export REALNAME='Markus Amano'
-export NAME='Markus Amano'
+export NAME="Markus Amano"
 export EMAIL="markus.a.amano@gmail.com"
-export GITHUBUSERNAME="inokawazu"
 
 export GIT_AUTHOR_NAME="$NAME"
 export GIT_AUTHOR_EMAIL="$EMAIL"

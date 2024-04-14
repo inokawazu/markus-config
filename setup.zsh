@@ -78,7 +78,10 @@ install_source_file vim_settings.vim ~/.vimrc "source %s"
 #}
 
 #Add tmux config file
-install_source_file tmux.conf ~/.tmux.conf  "source %s"
+install_source_file tmux.conf ~/.tmux.conf "source %s"
+
+# julia 
+install_source_file startup.jl ~/.julia/config/startup.jl 'include("%s")'
 
 ##Sets julia configuration
 #setupjulia(){

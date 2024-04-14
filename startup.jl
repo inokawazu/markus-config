@@ -6,6 +6,6 @@ atreplinit() do repl
             enable_autocomplete_brackets(false)
         end
     catch e
-        @warn "error while importing OhMyREPL" e
+        @warn "error while importing OhMyREPL and Revise" e
     end
 end

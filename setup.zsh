@@ -55,17 +55,3 @@ install_source_file tmux.conf ~/.tmux.conf "source %s"
 
 # julia 
 install_source_file startup.jl ~/.julia/config/startup.jl 'include("%s")'
-
-##Sets julia configuration
-#setupjulia(){
-#    which julia 2>&1 >/dev/null
-#    JULIA_IS_AVAILABLE=$?
-#    if [ $JULIA_IS_AVAILABLE -eq 0 ]; then
-#        # cp installjuliapkgs.jl /tmp
-#        julia --startup-file=no $SCRIPT_DIR/julia/installjuliapkgs.jl
-#        mkdir -p $HOME/.julia/config
-#        saveconfigfile julia/startup.jl $HOME/.julia/config/startup.jl
-#        julia --project=$HOME/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'
-#        echo "INSTALLED: julia packages"
-#    fi
-#}

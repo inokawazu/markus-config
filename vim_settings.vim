@@ -60,7 +60,6 @@ Plug 'tpope/vim-commentary'
 " Lang support
 Plug 'sheerun/vim-polyglot'
 Plug 'lluchs/vim-wren'
-Plug 'ollykel/v-vim'
 Plug 'lervag/vimtex'
 Plug 'rsmenon/vim-mathematica'
 

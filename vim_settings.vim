@@ -86,14 +86,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 set completeopt=menu,menuone,noselect
 
-" Dir navigation
-Plug 'preservim/nerdtree'
-nnoremap <C-t> :NERDTreeToggle<CR>
-
 call plug#end()
 
 " Custom bindings
-"
 " Make binding
 noremap <leader>m :w<CR>:!make<CR>
 

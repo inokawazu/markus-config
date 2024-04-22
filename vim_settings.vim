@@ -87,7 +87,11 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 
-Plug 'Ron89/thesaurus_query.vim'
+if executable('python')
+  Plug 'Ron89/thesaurus_query.vim'
+else
+  echo "Python is not installed and thesaurus_query will not be used."
+endif
 
 call plug#end()
 

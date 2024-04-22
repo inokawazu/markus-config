@@ -87,6 +87,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 
+Plug 'Ron89/thesaurus_query.vim'
+
 call plug#end()
 
 " Custom bindings

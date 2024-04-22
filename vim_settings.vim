@@ -99,6 +99,7 @@ autocmd FileType mma setlocal commentstring=(*\ %s\ *)
 " Setting complete opts
 set completeopt=menu,menuone,noselect
 set omnifunc=lsp#complete
+set dictionary+=spell
 
 let g:lsp_inlay_hints_enabled = 1
 

@@ -28,6 +28,9 @@ autocmd BufRead,BufNewFile *.jl set tabstop=4       " Set tabstops to a width of
 autocmd BufRead,BufNewFile *.jl set softtabstop=4   " Determine the behaviour of TAB and BACKSPACE keys with expandtab.
 autocmd BufRead,BufNewFile *.jl set shiftwidth=4    " Determine the results of >>, <<, and ==.
 
+" HTML templates
+autocmd BufRead,BufNewFile *.html.tmpl set filetype=html
+
 " This turns on line numbering.
 set relativenumber
 set number

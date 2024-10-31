@@ -86,7 +86,6 @@ vnoremap <leader><leader> <Plug>SendSelectionToTmux
 nnoremap <leader><leader> <Plug>NormalModeSendToTmux
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 
@@ -107,27 +106,34 @@ autocmd FileType mma setlocal commentstring=(*\ %s\ *)
 
 " Setting complete opts
 set completeopt=menu,menuone,noselect
-set omnifunc=lsp#complete
 set dictionary+=spell
 
-"   nnoremap <buffer> gI <plug>(lsp-status)
-"   nmap <buffer> gd <plug>(lsp-definition)
-"   nmap <buffer> gs <plug>(lsp-document-symbol-search)
-"   nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
-"   nmap <buffer> gr <plug>(lsp-references)
-"   nnoremap <buffer> g]r <plug>(lsp-next-reference)
-"   nnoremap <buffer> g]r <plug>(lsp-previous-reference)
-"   nmap <buffer> <leader> gi <plug>(lsp-implementation)
-"   nmap <buffer> gt <plug>(lsp-type-definition)
-"   nmap <buffer> <leader>rn <plug>(lsp-rename)
-"   nmap <buffer> [g <plug>(lsp-previous-diagnostic)
-"   nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-"   nmap <buffer> <leader> K <plug>(lsp-hover)
-"   nnoremap <buffer> ga <plug>(lsp-code-action)
-"   " nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
-"   " nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
-" endfunction
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc+=lsp#complete
+    setlocal signcolumn=yes
+    nnoremap <buffer> gI <plug>(lsp-status)
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
+    nnoremap <buffer> g]r <plug>(lsp-next-reference)
+    nnoremap <buffer> g[r <plug>(lsp-previous-reference)
+    nmap <buffer> <leader>gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    nnoremap <buffer> ga <plug>(lsp-code-action)
+    " nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    " nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+endfunction
 
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
 
 " colorscheme
 let g:sonokai_style = 'espresso'

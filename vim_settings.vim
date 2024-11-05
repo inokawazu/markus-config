@@ -105,11 +105,11 @@ noremap <leader>m :w<CR>:!make<CR>
 autocmd FileType mma setlocal commentstring=(*\ %s\ *) 
 
 " Setting complete opts
-set completeopt=menu,menuone,noselect
-set dictionary+=spell
+setlocal completeopt=menu,menuone,noselect
+setlocal dictionary=spell
 
 function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc+=lsp#complete
+    setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
     nnoremap <buffer> gI <plug>(lsp-status)
     nmap <buffer> gd <plug>(lsp-definition)

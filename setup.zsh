@@ -5,6 +5,13 @@ set -euo pipefail
 
 SCRIPT_DIR=$(dirname -- $(readlink -fn -- "$0"))
 
+create_file() {
+    target_file=$1
+    shift
+    mkdir -p $(dirname $target_file)
+    touch $target_file
+}
+
 install_source_file() {
     # arguments: source_file target_file template
     source_file=$1
@@ -16,9 +23,9 @@ install_source_file() {
     if read -q "reply?Would you like to install $source_file to $target_file (y/n): "
     then
         echo "\n Installed $source_file to $target_file"
+        create_file $target_file
         printf "$template\n" $SCRIPT_DIR/$source_file >> $target_file
     else
-        echo
         echo
     fi
 }

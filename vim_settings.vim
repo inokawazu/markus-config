@@ -144,4 +144,4 @@ setlocal dictionary=spell
 let g:sonokai_style = 'espresso'
 colorscheme sonokai
 
-source coc.vim
+runtime coc.vim

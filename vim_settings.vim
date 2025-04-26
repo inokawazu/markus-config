@@ -19,7 +19,14 @@ set scrolloff=10
 set mmp=10000 " more memory for pattern matching!
 
 set expandtab       " Replace tabs with spaces.
+
 set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+autocmd BufRead,BufNewFile *.html set tabstop=2
+autocmd BufRead,BufNewFile *.html set softtabstop=2
+autocmd BufRead,BufNewFile *.html set shiftwidth=2
 
 " Julia Stuff
 autocmd BufRead,BufNewFile *.jl set textwidth=92    " Limit lines according to Julia's CONTRIBUTING guidelines.
@@ -60,7 +67,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 
 " Lang support
-" Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 Plug 'lluchs/vim-wren'
 Plug 'lervag/vimtex'
 Plug 'rsmenon/vim-mathematica'
@@ -138,7 +145,7 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice
-inoremap <silent><expr> <c-CR> coc#pum#visible() ? coc#pum#confirm()
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 function! CheckBackspace() abort

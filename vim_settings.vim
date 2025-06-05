@@ -171,7 +171,7 @@ nmap <silent><nowait> ]g <Plug>(coc-diagnostic-next)
 " GoTo code navigation
 nmap <silent><nowait> gd <Plug>(coc-definition)
 nmap <silent><nowait> gy <Plug>(coc-type-definition)
-nmap <silent><nowait> gi <Plug>(coc-implementation)
+nmap <silent><nowait> <leader>gi <Plug>(coc-implementation)
 nmap <silent><nowait> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window

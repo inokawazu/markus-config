@@ -115,6 +115,9 @@ setlocal dictionary=spell
 let g:sonokai_style = 'espresso'
 colorscheme sonokai
 
+" movement mappings
+nnoremap <C-p> :b#<CR>
+
 " COC Settings
 " https://raw.githubusercontent.com/neoclide/coc.nvim/master/doc/coc-example-config.vim
 " May need for Vim (not Neovim) since coc.nvim calculates byte offset by count

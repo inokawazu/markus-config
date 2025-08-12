@@ -67,17 +67,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 
 " Lang support
-Plug 'sheerun/vim-polyglot'
 Plug 'lluchs/vim-wren'
 Plug 'lervag/vimtex'
 Plug 'rsmenon/vim-mathematica'
 
 " easy to put in brackets
 Plug 'tpope/vim-surround'
-
-" Julia support for vim.
-" Plug 'JuliaEditorSupport/julia-vim'
-" Plug 'kdheepak/JuliaFormatter.vim'
 
 " Coloschemes
 Plug 'sainnhe/gruvbox-material'

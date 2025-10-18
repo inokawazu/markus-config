@@ -99,8 +99,11 @@ call plug#end()
 " Make binding
 noremap <leader>m :w<CR>:!make<CR>
 
-" Sets mathematica strings
+" Mathematica Settings
+" Sets Mathematica strings
 autocmd FileType mma setlocal commentstring=(*\ %s\ *) 
+" Sets Mathematica to wls files
+au BufNewFile,BufRead *.wls set filetype=mma
 
 " Setting complete opts
 setlocal completeopt=menu,menuone,noselect

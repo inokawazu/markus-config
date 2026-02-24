@@ -93,6 +93,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Sagemath
+Plug 'petRUShka/vim-sage'
+
 call plug#end()
 
 " Custom bindings

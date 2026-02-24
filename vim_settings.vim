@@ -279,3 +279,21 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+
+" tex remap
+
+function! OpenPdfIfTex()
+  if expand('%:e') !=# 'tex'
+    echo "Not a .tex file"
+    return
+  endif
+  let pdf = expand('%:r') . '.pdf'
+  if !filereadable(pdf)
+    echo "PDF not found: " . pdf
+    return
+  endif
+  execute 'silent !xdg-open ' . fnameescape(pdf) . ' &'
+endfunction
+
+nnoremap <leader>op :call OpenPdfIfTex()<CR>

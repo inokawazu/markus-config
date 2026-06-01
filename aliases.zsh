@@ -36,8 +36,8 @@ alias file="file -S"
 alias getip='echo $( curl -s "https://api.myip.com" )'
 
 # media playback
-alias mpa="mpv --no-video"
-alias youtube-mp3="youtube-dl --extract-audio --audio-format mp3"
+is_command mpa && alias mpa="mpv --no-video"
+is_command yt-dlp && alias youtube-mp3="yt-dlp --extract-audio --audio-format mp3"
 
 # vim is old
 is_command nvim && alias vim="nvim"

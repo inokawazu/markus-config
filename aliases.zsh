@@ -1,28 +1,34 @@
 is_command() { type $1 &> /dev/null }
 
 # open = xdg
-alias open="xdg-open"
+is_command xdg-open && alias open="xdg-open"
 
 # wolframscript so one can run wsf file.wl
-alias wsf="wolframscript -f"
+is_command wolframscript && alias wsf="wolframscript -f"
 
 # grep through all aliases
 alias alig="alias | grep"
 
 # tmux aliases
-alias tat="tmux attach -t"
-alias tns="tmux new -s"
-alias tl="tmux ls"
+if is_command tmux
+then
+    alias tat="tmux attach -t"
+    alias tns="tmux new -s"
+    alias tl="tmux ls"
+fi
 
 # julia aliases
+if is_command julia
+then
 alias j="julia"
 alias jp="julia --project"
 alias jtest="julia --project -e 'using Pkg; Pkg.test()'"
 alias jsc="julia --startup-file=no" # short for "julia script"
 alias pluto='JULIA_NUM_THREADS=auto julia --startup-file=no --project -e "using Pluto; Pluto.run(auto_reload_from_file=true)"'
+fi
 
 # language aliases
-alias jlookup='python -m jamdict lookup'
+# alias jlookup='python -m jamdict lookup'
 
 # modern linux 
 is_command lsd && alias ls="lsd"

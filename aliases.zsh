@@ -47,3 +47,4 @@ if [[ -n $KITTY_WINDOW_ID ]]; then
   alias ssh="kitten ssh"
 fi
 
+is_command latexmk && alias latexmk_watch="latexmk -pvc -f -interaction=nonstopmode -pdf"

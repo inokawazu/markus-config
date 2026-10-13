@@ -9,3 +9,8 @@ try
 catch e
     @warn "error while importing Revise" e
 end
+
+
+if haskey(ENV, "EDITOR")
+    ENV["JULIA_EDITOR"] = ENV["EDITOR"]
+end
